@@ -44,5 +44,26 @@ body {
     background-color: plum;
     grid-column: 1;
     grid-row: 1;
-    height: 20%;
+    height: 30%;
+    display: flex;
+
+}
+
+.grid-element-3>form {
+    height: 40%;
+    width: 60%;
+}
+
+.radio-input-category+label {
+    cursor: pointer;
+}
+
+.grid-element-3>form>#task-input {
+    width: 100%;
+    height: 40%;
+}
+
+#submit-task-button {
+    width: 50%;
+    height: 30%;
 }
