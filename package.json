@@ -11,6 +11,10 @@
   },
   "scripts": {
     "build": "webpack",
-    "start": "webpack serve"
-  }
+    "start": "webpack serve",
+    "watch": "webpack --watch"
+  },
+  "sideEffects": [
+    "*.css"
+  ]
 }

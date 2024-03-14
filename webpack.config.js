@@ -5,6 +5,8 @@ module.exports = {
 
     entry: './src/index.ts',
 
+    mode: "development",
+
     output: {
 
         filename: 'bundle.js',
@@ -13,7 +15,11 @@ module.exports = {
 
     },
 
-    plugins: [new HtmlWebpackPlugin()],
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        })
+    ],
 
     module: {
 
@@ -32,7 +38,7 @@ module.exports = {
             {
                 test: /\.css$/i,
 
-                use: ['style-loader', 'css-loader'],
+                use: ["style-loader", "css-loader"],
 
             },
 
@@ -54,7 +60,7 @@ module.exports = {
         },
         compress: true,
         port: 9000,
-        // other dev server options...
+
     },
 
 };

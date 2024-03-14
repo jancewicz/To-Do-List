@@ -1,3 +1,48 @@
-.hello {
-    color: red;
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.full-page-container {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.header {
+    width: 100%;
+    height: 10%;
+    background-color: lightseagreen;
+}
+
+.grid-container {
+    width: 100%;
+    height: 90%;
+    background-color: slateblue;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 100%;
+    height: 90%;
+}
+
+.grid-element-1 {
+    background-color: crimson;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.grid-element-2 {
+    background-color: yellow;
+    grid-column: 2;
+    grid-row: 1;
+    height: 100%;
+}
+
+.grid-element-3 {
+    background-color: plum;
+    grid-column: 1;
+    grid-row: 1;
+    height: 20%;
 }
