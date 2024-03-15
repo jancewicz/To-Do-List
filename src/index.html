@@ -18,36 +18,44 @@
         </div>
         <div class="grid-container">
             <div class="grid-element-1">
+
                 <form action="">
-                    <input type="text" id="task-input" name="task-input" placeholder="Enter your task">
+                    <input type="text" id="task-input" name="task-input" placeholder="Create new project:">
+                    <div>Choose category:</div>
                     <div>
-                        <div>Choose category:</div>
-                        <input type="checkbox" id="sport" name="sport" value="sport" class="checkbox-input-category">
-                        <label for="sport">Sport</label>
+                        <input type="checkbox" id="general" name="general" value="general"
+                            class="checkbox-input-category">
+                        <label for="general">General</label>
                     </div>
                     <div>
                         <input type="checkbox" id="work" name="work" value="work" class="checkbox-input-category">
                         <label for="work">Work</label>
                     </div>
                     <div>
+                        <input type="checkbox" id="sport" name="sport" value="sport" class="checkbox-input-category">
+                        <label for="sport">Sport</label>
+                    </div>
+                    <div>
                         <input type="checkbox" id="leisure" name="leisure" value="leisure"
                             class="checkbox-input-category">
                         <label for="leisure">Leisure time</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="general" name="general" value="general"
-                            class="checkbox-input-category">
-                        <label for="general">General</label>
                     </div>
                     <div id="submit-task">
                         <button type="submit" id="submit-task-button">SUBMIT</button>
                     </div>
                 </form>
+
             </div>
+
             <div class="grid-element-2">
+                <button class="category-list-element" id="1">PROJECT</button>
             </div>
+
             <div class="grid-element-3">
+                <div class="project-overview">
+                </div>
             </div>
+
         </div>
         <div class="footer"></div>
     </div>
