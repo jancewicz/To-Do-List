@@ -15,6 +15,8 @@ body {
     width: 100%;
     height: 10%;
     background-color: lightseagreen;
+    display: flex;
+    justify-content: center;
 }
 
 .grid-container {
@@ -22,48 +24,57 @@ body {
     height: 90%;
     background-color: slateblue;
     display: grid;
-    grid-template-columns: 30% 1fr;
-    grid-template-rows: 100%;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 2.5fr;
     height: 90%;
 }
 
+
 .grid-element-1 {
-    background-color: crimson;
+    background-color: plum;
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 1 / span 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.checkbox-input-category+label {
+    cursor: pointer;
+}
+
+.grid-element-1>form {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.grid-element-1>form>#task-input {
+    width: 34em;
+    height: 4em;
+}
+
+#submit-task {
+    display: flex;
+    justify-content: center;
+}
+
+#submit-task-button {
+    width: 10em;
+    height: 2em;
 }
 
 .grid-element-2 {
     background-color: yellow;
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 1;
+    grid-row: 2;
     height: 100%;
 }
 
 .grid-element-3 {
-    background-color: plum;
-    grid-column: 1;
-    grid-row: 1;
-    height: 30%;
-    display: flex;
+    background-color: crimson;
+    grid-column: 2;
+    grid-row: 1/3;
 
-}
-
-.grid-element-3>form {
-    height: 40%;
-    width: 60%;
-}
-
-.radio-input-category+label {
-    cursor: pointer;
-}
-
-.grid-element-3>form>#task-input {
-    width: 100%;
-    height: 40%;
-}
-
-#submit-task-button {
-    width: 50%;
-    height: 30%;
 }

@@ -38,6 +38,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     width: 100%;
     height: 10%;
     background-color: lightseagreen;
+    display: flex;
+    justify-content: center;
 }
 
 .grid-container {
@@ -45,51 +47,60 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     height: 90%;
     background-color: slateblue;
     display: grid;
-    grid-template-columns: 30% 1fr;
-    grid-template-rows: 100%;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 2.5fr;
     height: 90%;
 }
 
+
 .grid-element-1 {
-    background-color: crimson;
+    background-color: plum;
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 1 / span 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.checkbox-input-category+label {
+    cursor: pointer;
+}
+
+.grid-element-1>form {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.grid-element-1>form>#task-input {
+    width: 34em;
+    height: 4em;
+}
+
+#submit-task {
+    display: flex;
+    justify-content: center;
+}
+
+#submit-task-button {
+    width: 10em;
+    height: 2em;
 }
 
 .grid-element-2 {
     background-color: yellow;
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 1;
+    grid-row: 2;
     height: 100%;
 }
 
 .grid-element-3 {
-    background-color: plum;
-    grid-column: 1;
-    grid-row: 1;
-    height: 30%;
-    display: flex;
+    background-color: crimson;
+    grid-column: 2;
+    grid-row: 1/3;
 
-}
-
-.grid-element-3>form {
-    height: 40%;
-    width: 60%;
-}
-
-.radio-input-category+label {
-    cursor: pointer;
-}
-
-.grid-element-3>form>#task-input {
-    width: 100%;
-    height: 40%;
-}
-
-#submit-task-button {
-    width: 50%;
-    height: 30%;
-}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,SAAS;IACT,WAAW;IACX,aAAa;AACjB;;;AAGA;IACI,WAAW;IACX,WAAW;IACX,+BAA+B;AACnC;;AAEA;IACI,WAAW;IACX,WAAW;IACX,2BAA2B;IAC3B,aAAa;IACb,8BAA8B;IAC9B,wBAAwB;IACxB,WAAW;AACf;;AAEA;IACI,yBAAyB;IACzB,cAAc;IACd,WAAW;AACf;;AAEA;IACI,wBAAwB;IACxB,cAAc;IACd,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,sBAAsB;IACtB,cAAc;IACd,WAAW;IACX,WAAW;IACX,aAAa;;AAEjB;;AAEA;IACI,WAAW;IACX,UAAU;AACd;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,UAAU;IACV,WAAW;AACf","sourcesContent":["body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 0;\r\n}\r\n\r\n.full-page-container {\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n\r\n.header {\r\n    width: 100%;\r\n    height: 10%;\r\n    background-color: lightseagreen;\r\n}\r\n\r\n.grid-container {\r\n    width: 100%;\r\n    height: 90%;\r\n    background-color: slateblue;\r\n    display: grid;\r\n    grid-template-columns: 30% 1fr;\r\n    grid-template-rows: 100%;\r\n    height: 90%;\r\n}\r\n\r\n.grid-element-1 {\r\n    background-color: crimson;\r\n    grid-column: 1;\r\n    grid-row: 1;\r\n}\r\n\r\n.grid-element-2 {\r\n    background-color: yellow;\r\n    grid-column: 2;\r\n    grid-row: 1;\r\n    height: 100%;\r\n}\r\n\r\n.grid-element-3 {\r\n    background-color: plum;\r\n    grid-column: 1;\r\n    grid-row: 1;\r\n    height: 30%;\r\n    display: flex;\r\n\r\n}\r\n\r\n.grid-element-3>form {\r\n    height: 40%;\r\n    width: 60%;\r\n}\r\n\r\n.radio-input-category+label {\r\n    cursor: pointer;\r\n}\r\n\r\n.grid-element-3>form>#task-input {\r\n    width: 100%;\r\n    height: 40%;\r\n}\r\n\r\n#submit-task-button {\r\n    width: 50%;\r\n    height: 30%;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,SAAS;IACT,WAAW;IACX,aAAa;AACjB;;;AAGA;IACI,WAAW;IACX,WAAW;IACX,+BAA+B;IAC/B,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;IACX,2BAA2B;IAC3B,aAAa;IACb,8BAA8B;IAC9B,6BAA6B;IAC7B,WAAW;AACf;;;AAGA;IACI,sBAAsB;IACtB,cAAc;IACd,oBAAoB;IACpB,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,wBAAwB;IACxB,cAAc;IACd,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,yBAAyB;IACzB,cAAc;IACd,aAAa;;AAEjB","sourcesContent":["body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 0;\r\n}\r\n\r\n.full-page-container {\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n\r\n.header {\r\n    width: 100%;\r\n    height: 10%;\r\n    background-color: lightseagreen;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.grid-container {\r\n    width: 100%;\r\n    height: 90%;\r\n    background-color: slateblue;\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n    grid-template-rows: 1fr 2.5fr;\r\n    height: 90%;\r\n}\r\n\r\n\r\n.grid-element-1 {\r\n    background-color: plum;\r\n    grid-column: 1;\r\n    grid-row: 1 / span 1;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.checkbox-input-category+label {\r\n    cursor: pointer;\r\n}\r\n\r\n.grid-element-1>form {\r\n    height: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.grid-element-1>form>#task-input {\r\n    width: 34em;\r\n    height: 4em;\r\n}\r\n\r\n#submit-task {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n#submit-task-button {\r\n    width: 10em;\r\n    height: 2em;\r\n}\r\n\r\n.grid-element-2 {\r\n    background-color: yellow;\r\n    grid-column: 1;\r\n    grid-row: 2;\r\n    height: 100%;\r\n}\r\n\r\n.grid-element-3 {\r\n    background-color: crimson;\r\n    grid-column: 2;\r\n    grid-row: 1/3;\r\n\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
