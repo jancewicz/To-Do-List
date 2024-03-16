@@ -106,11 +106,34 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     border: 2px black solid;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
-.category-list-element:hover {
-    background-color: wheat;
+
+.go-to-project {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+    cursor: pointer;
+}
+
+.go-to-project:hover {
+    text-decoration: underline;
+}
+
+.delete-project {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.trashbin-icon:hover {
+    transform: scale(1.2);
 }
 
 
@@ -127,7 +150,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 .project-overview {
     margin-top: 1em;
     width: 80%;
-    height: 15%;
+    height: 20%;
     background-color: floralwhite;
     z-index: 1;
 }
@@ -137,7 +160,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     width: 50px;
     height: 50px;
     border: 10px solid black;
-}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,SAAS;IACT,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,WAAW;IACX,+BAA+B;IAC/B,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;IACX,2BAA2B;IAC3B,aAAa;IACb,8BAA8B;IAC9B,6BAA6B;IAC7B,WAAW;AACf;;;AAGA;IACI,sBAAsB;IACtB,cAAc;IACd,oBAAoB;IACpB,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,wBAAwB;IACxB,cAAc;IACd,WAAW;IACX,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,WAAW;IACX,sBAAsB;IACtB,UAAU;IACV,eAAe;IACf,uBAAuB;IACvB,aAAa;IACb,mBAAmB;IACnB,2BAA2B;AAC/B;;AAEA;IACI,uBAAuB;AAC3B;;;AAGA;IACI,yBAAyB;IACzB,cAAc;IACd,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;;AAGA;IACI,eAAe;IACf,UAAU;IACV,WAAW;IACX,6BAA6B;IAC7B,UAAU;AACd;;;AAGA;IACI,WAAW;IACX,YAAY;IACZ,wBAAwB;AAC5B","sourcesContent":["body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 0;\r\n}\r\n\r\n.full-page-container {\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.header {\r\n    width: 100%;\r\n    height: 10%;\r\n    background-color: lightseagreen;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.grid-container {\r\n    width: 100%;\r\n    height: 90%;\r\n    background-color: slateblue;\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n    grid-template-rows: 1fr 2.5fr;\r\n    height: 90%;\r\n}\r\n\r\n\r\n.grid-element-1 {\r\n    background-color: plum;\r\n    grid-column: 1;\r\n    grid-row: 1 / span 1;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.checkbox-input-category+label {\r\n    cursor: pointer;\r\n}\r\n\r\n.grid-element-1>form {\r\n    height: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.grid-element-1>form>#task-input {\r\n    width: 34em;\r\n    height: 4em;\r\n}\r\n\r\n#submit-task {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n#submit-task-button {\r\n    width: 10em;\r\n    height: 2em;\r\n}\r\n\r\n.grid-element-2 {\r\n    background-color: yellow;\r\n    grid-column: 1;\r\n    grid-row: 2;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.category-list-element {\r\n    width: 90%;\r\n    height: 15%;\r\n    background-color: aqua;\r\n    z-index: 1;\r\n    margin-top: 1em;\r\n    border: 2px black solid;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n}\r\n\r\n.category-list-element:hover {\r\n    background-color: wheat;\r\n}\r\n\r\n\r\n.grid-element-3 {\r\n    background-color: crimson;\r\n    grid-column: 2;\r\n    grid-row: 1/3;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n\r\n.project-overview {\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    height: 15%;\r\n    background-color: floralwhite;\r\n    z-index: 1;\r\n}\r\n\r\n\r\n.testDiv {\r\n    width: 50px;\r\n    height: 50px;\r\n    border: 10px solid black;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,SAAS;IACT,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,WAAW;IACX,+BAA+B;IAC/B,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;IACX,2BAA2B;IAC3B,aAAa;IACb,8BAA8B;IAC9B,6BAA6B;IAC7B,WAAW;AACf;;;AAGA;IACI,sBAAsB;IACtB,cAAc;IACd,oBAAoB;IACpB,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,wBAAwB;IACxB,cAAc;IACd,WAAW;IACX,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,WAAW;IACX,sBAAsB;IACtB,UAAU;IACV,eAAe;IACf,uBAAuB;IACvB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;AAClC;;;AAGA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,iBAAiB;IACjB,eAAe;AACnB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,qBAAqB;AACzB;;;AAGA;IACI,yBAAyB;IACzB,cAAc;IACd,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;;AAGA;IACI,eAAe;IACf,UAAU;IACV,WAAW;IACX,6BAA6B;IAC7B,UAAU;AACd;;;AAGA;IACI,WAAW;IACX,YAAY;IACZ,wBAAwB;AAC5B","sourcesContent":["body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 0;\r\n}\r\n\r\n.full-page-container {\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.header {\r\n    width: 100%;\r\n    height: 10%;\r\n    background-color: lightseagreen;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.grid-container {\r\n    width: 100%;\r\n    height: 90%;\r\n    background-color: slateblue;\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n    grid-template-rows: 1fr 2.5fr;\r\n    height: 90%;\r\n}\r\n\r\n\r\n.grid-element-1 {\r\n    background-color: plum;\r\n    grid-column: 1;\r\n    grid-row: 1 / span 1;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.checkbox-input-category+label {\r\n    cursor: pointer;\r\n}\r\n\r\n.grid-element-1>form {\r\n    height: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.grid-element-1>form>#task-input {\r\n    width: 34em;\r\n    height: 4em;\r\n}\r\n\r\n#submit-task {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n#submit-task-button {\r\n    width: 10em;\r\n    height: 2em;\r\n}\r\n\r\n.grid-element-2 {\r\n    background-color: yellow;\r\n    grid-column: 1;\r\n    grid-row: 2;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.category-list-element {\r\n    width: 90%;\r\n    height: 15%;\r\n    background-color: aqua;\r\n    z-index: 1;\r\n    margin-top: 1em;\r\n    border: 2px black solid;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n\r\n.go-to-project {\r\n    width: 80%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    padding-left: 1em;\r\n    cursor: pointer;\r\n}\r\n\r\n.go-to-project:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.delete-project {\r\n    width: 20%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.trashbin-icon:hover {\r\n    transform: scale(1.2);\r\n}\r\n\r\n\r\n.grid-element-3 {\r\n    background-color: crimson;\r\n    grid-column: 2;\r\n    grid-row: 1/3;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n\r\n.project-overview {\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    height: 20%;\r\n    background-color: floralwhite;\r\n    z-index: 1;\r\n}\r\n\r\n\r\n.testDiv {\r\n    width: 50px;\r\n    height: 50px;\r\n    border: 10px solid black;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -582,6 +605,134 @@ function styleTagTransform(css, styleElement) {
 }
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./src/classes/project.ts":
+/*!********************************!*\
+  !*** ./src/classes/project.ts ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Category: () => (/* binding */ Category),
+/* harmony export */   Project: () => (/* binding */ Project)
+/* harmony export */ });
+class Project {
+    constructor(name, category = Category.GENERAL, createdAt) {
+        this.name = name;
+        this.category = category;
+        this.createdAt = new Date();
+    }
+}
+var Category;
+(function (Category) {
+    Category["GENERAL"] = "general";
+    Category["WORK"] = "work";
+    Category["SPORT"] = "sport";
+    Category["LEISURE"] = "leisure";
+})(Category || (Category = {}));
+;
+
+
+/***/ }),
+
+/***/ "./src/index.ts":
+/*!**********************!*\
+  !*** ./src/index.ts ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   selectCategory: () => (/* binding */ selectCategory)
+/* harmony export */ });
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
+/* harmony import */ var _classes_project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/project */ "./src/classes/project.ts");
+/* harmony import */ var _render_functions_renderNewProject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./render-functions/renderNewProject */ "./src/render-functions/renderNewProject.ts");
+
+
+
+// const projectElement: HTMLButtonElement = document.querySelector(".category-list-element")!;
+const submitFormButton = document.getElementById("submit-task-button");
+const categories = [
+    _classes_project__WEBPACK_IMPORTED_MODULE_1__.Category.GENERAL,
+    _classes_project__WEBPACK_IMPORTED_MODULE_1__.Category.WORK,
+    _classes_project__WEBPACK_IMPORTED_MODULE_1__.Category.SPORT,
+    _classes_project__WEBPACK_IMPORTED_MODULE_1__.Category.LEISURE
+];
+const selectCategory = () => {
+    let selectedCategory = _classes_project__WEBPACK_IMPORTED_MODULE_1__.Category.GENERAL;
+    const categoryCheckboxElement = document.querySelector(".checkbox-input-category");
+    switch (categoryCheckboxElement.value) {
+        case "general":
+            selectedCategory = _classes_project__WEBPACK_IMPORTED_MODULE_1__.Category.GENERAL;
+            break;
+        case "work":
+            selectedCategory = _classes_project__WEBPACK_IMPORTED_MODULE_1__.Category.WORK;
+            break;
+        case "leisure":
+            selectedCategory = _classes_project__WEBPACK_IMPORTED_MODULE_1__.Category.LEISURE;
+            break;
+        case "sport":
+            selectedCategory = _classes_project__WEBPACK_IMPORTED_MODULE_1__.Category.SPORT;
+            break;
+    }
+    return selectedCategory;
+};
+if (submitFormButton) {
+    submitFormButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        (0,_render_functions_renderNewProject__WEBPACK_IMPORTED_MODULE_2__.renderNewProject)();
+    });
+}
+
+
+/***/ }),
+
+/***/ "./src/render-functions/renderNewProject.ts":
+/*!**************************************************!*\
+  !*** ./src/render-functions/renderNewProject.ts ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   renderNewProject: () => (/* binding */ renderNewProject),
+/* harmony export */   rendertrashBinIcon: () => (/* binding */ rendertrashBinIcon)
+/* harmony export */ });
+/* harmony import */ var _classes_project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../classes/project */ "./src/classes/project.ts");
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! .. */ "./src/index.ts");
+
+
+const rendertrashBinIcon = () => {
+    const trashbinIcon = document.createElement("img");
+    trashbinIcon.setAttribute("src", "images/trashbin.svg");
+    trashbinIcon.classList.add("trashbin-icon");
+    trashbinIcon.setAttribute("alt", "trashbin-icon");
+    return trashbinIcon;
+};
+const renderNewProject = () => {
+    const selectedCategory = (0,___WEBPACK_IMPORTED_MODULE_0__.selectCategory)();
+    const projectsOverview = document.querySelector(".grid-element-2");
+    const projectNameInput = document.querySelector("#task-input");
+    let newProject = new _classes_project__WEBPACK_IMPORTED_MODULE_1__.Project(projectNameInput.value, selectedCategory, new Date());
+    const newProjectELement = document.createElement("div");
+    newProjectELement.classList.add("category-list-element");
+    const newProjectDescription = document.createElement("div");
+    newProjectDescription.classList.add("go-to-project");
+    newProjectDescription.innerText = newProject.name;
+    const trashbinDiv = document.createElement("div");
+    trashbinDiv.classList.add("delete-project");
+    const trashbinIcon = rendertrashBinIcon();
+    trashbinDiv.appendChild(trashbinIcon);
+    newProjectELement.appendChild(newProjectDescription);
+    newProjectELement.appendChild(trashbinDiv);
+    projectsOverview.appendChild(newProjectELement);
+    console.log(newProject);
+};
+
+
 /***/ })
 
 /******/ 	});
@@ -657,36 +808,12 @@ module.exports = styleTagTransform;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-/*!**********************!*\
-  !*** ./src/index.ts ***!
-  \**********************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-
-const projectsOverview = document.querySelector(".grid-element-2");
-const testButton = document.querySelector(".category-list-element");
-const projectNameInput = document.querySelector("#task-input");
-const submitFormButton = document.getElementById("submit-task-button");
-testButton.addEventListener("click", (event) => {
-    const targetButton = event.target;
-    console.log(targetButton.id);
-});
-const appendNewProject = () => {
-    const newProjectELement = document.createElement("button");
-    newProjectELement.classList.add("category-list-element");
-    newProjectELement.textContent = projectNameInput.value;
-    projectsOverview.appendChild(newProjectELement);
-};
-submitFormButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    appendNewProject();
-});
-
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.ts");
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=bundle.js.map

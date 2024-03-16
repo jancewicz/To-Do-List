@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require('path');
 
 module.exports = {
@@ -11,7 +12,12 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html'
-        })
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: "src/icons", to: "images" },
+            ],
+        }),
     ],
     module: {
         rules: [
@@ -28,7 +34,7 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'images/[name][ext]'
+                    filename: 'icons/[name][ext]'
                 }
             },
         ],

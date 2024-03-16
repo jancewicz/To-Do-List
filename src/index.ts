@@ -1,27 +1,46 @@
 import './style.css';
-
-const projectsOverview: HTMLElement = document.querySelector(".grid-element-2")!;
-const testButton: HTMLButtonElement = document.querySelector(".category-list-element")!;
-const projectNameInput: HTMLInputElement = document.querySelector("#task-input")!;
-const submitFormButton: HTMLButtonElement = document.getElementById("submit-task-button");
-
-testButton.addEventListener("click", (event: MouseEvent) => {
-    const targetButton = event.target as HTMLButtonElement
-    console.log(targetButton.id);
-});
+import { Project, Category } from './classes/project';
+import { renderNewProject, rendertrashBinIcon } from './render-functions/renderNewProject';
 
 
-const appendNewProject = () => {
-    const newProjectELement: HTMLElement = document.createElement("button");
-    newProjectELement.classList.add("category-list-element");
-    newProjectELement.textContent = projectNameInput.value;
-    projectsOverview.appendChild(newProjectELement);
+// const projectElement: HTMLButtonElement = document.querySelector(".category-list-element")!;
+const submitFormButton = document.getElementById("submit-task-button") as HTMLButtonElement | null;
+
+const categories: Category[] = [
+    Category.GENERAL,
+    Category.WORK,
+    Category.SPORT,
+    Category.LEISURE
+];
+
+
+export const selectCategory = () => {
+    let selectedCategory: Category = Category.GENERAL;
+    const categoryCheckboxElement: HTMLInputElement = document.querySelector(".checkbox-input-category")!;
+
+    switch (categoryCheckboxElement.value) {
+        case "general":
+            selectedCategory = Category.GENERAL;
+            break;
+        case "work":
+            selectedCategory = Category.WORK;
+            break;
+        case "leisure":
+            selectedCategory = Category.LEISURE;
+            break;
+        case "sport":
+            selectedCategory = Category.SPORT;
+            break;
+    }
+    return selectedCategory;
 }
 
-submitFormButton.addEventListener("click", (event: Event) => {
-    event.preventDefault();
-    appendNewProject();
-})
 
+if (submitFormButton) {
+    submitFormButton.addEventListener("click", (event: Event) => {
+        event.preventDefault();
+        renderNewProject();
+    })
+}
 
 

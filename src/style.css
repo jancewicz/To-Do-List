@@ -83,11 +83,34 @@ body {
     border: 2px black solid;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
-.category-list-element:hover {
-    background-color: wheat;
+
+.go-to-project {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+    cursor: pointer;
+}
+
+.go-to-project:hover {
+    text-decoration: underline;
+}
+
+.delete-project {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.trashbin-icon:hover {
+    transform: scale(1.2);
 }
 
 
@@ -104,7 +127,7 @@ body {
 .project-overview {
     margin-top: 1em;
     width: 80%;
-    height: 15%;
+    height: 20%;
     background-color: floralwhite;
     z-index: 1;
 }
