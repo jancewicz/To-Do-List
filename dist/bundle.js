@@ -97,7 +97,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     align-items: center;
 }
 
-.category-list-element {
+.project-list-element {
     width: 90%;
     height: 15%;
     background-color: aqua;
@@ -148,19 +148,50 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 
 
 .project-overview {
+    position: relative;
     margin-top: 1em;
     width: 80%;
     height: 20%;
     background-color: floralwhite;
-    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    scale: 1;
 }
 
+.project-data {
+    width: 70%;
+    height: 100%;
+    background-color: blueviolet;
+}
 
-.testDiv {
-    width: 50px;
-    height: 50px;
-    border: 10px solid black;
-}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,SAAS;IACT,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,WAAW;IACX,+BAA+B;IAC/B,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;IACX,2BAA2B;IAC3B,aAAa;IACb,8BAA8B;IAC9B,6BAA6B;IAC7B,WAAW;AACf;;;AAGA;IACI,sBAAsB;IACtB,cAAc;IACd,oBAAoB;IACpB,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,wBAAwB;IACxB,cAAc;IACd,WAAW;IACX,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,WAAW;IACX,sBAAsB;IACtB,UAAU;IACV,eAAe;IACf,uBAAuB;IACvB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;AAClC;;;AAGA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,iBAAiB;IACjB,eAAe;AACnB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,qBAAqB;AACzB;;;AAGA;IACI,yBAAyB;IACzB,cAAc;IACd,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;;AAGA;IACI,eAAe;IACf,UAAU;IACV,WAAW;IACX,6BAA6B;IAC7B,UAAU;AACd;;;AAGA;IACI,WAAW;IACX,YAAY;IACZ,wBAAwB;AAC5B","sourcesContent":["body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 0;\r\n}\r\n\r\n.full-page-container {\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.header {\r\n    width: 100%;\r\n    height: 10%;\r\n    background-color: lightseagreen;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.grid-container {\r\n    width: 100%;\r\n    height: 90%;\r\n    background-color: slateblue;\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n    grid-template-rows: 1fr 2.5fr;\r\n    height: 90%;\r\n}\r\n\r\n\r\n.grid-element-1 {\r\n    background-color: plum;\r\n    grid-column: 1;\r\n    grid-row: 1 / span 1;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.checkbox-input-category+label {\r\n    cursor: pointer;\r\n}\r\n\r\n.grid-element-1>form {\r\n    height: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.grid-element-1>form>#task-input {\r\n    width: 34em;\r\n    height: 4em;\r\n}\r\n\r\n#submit-task {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n#submit-task-button {\r\n    width: 10em;\r\n    height: 2em;\r\n}\r\n\r\n.grid-element-2 {\r\n    background-color: yellow;\r\n    grid-column: 1;\r\n    grid-row: 2;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.category-list-element {\r\n    width: 90%;\r\n    height: 15%;\r\n    background-color: aqua;\r\n    z-index: 1;\r\n    margin-top: 1em;\r\n    border: 2px black solid;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n\r\n.go-to-project {\r\n    width: 80%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    padding-left: 1em;\r\n    cursor: pointer;\r\n}\r\n\r\n.go-to-project:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.delete-project {\r\n    width: 20%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.trashbin-icon:hover {\r\n    transform: scale(1.2);\r\n}\r\n\r\n\r\n.grid-element-3 {\r\n    background-color: crimson;\r\n    grid-column: 2;\r\n    grid-row: 1/3;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n\r\n.project-overview {\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    height: 20%;\r\n    background-color: floralwhite;\r\n    z-index: 1;\r\n}\r\n\r\n\r\n.testDiv {\r\n    width: 50px;\r\n    height: 50px;\r\n    border: 10px solid black;\r\n}"],"sourceRoot":""}]);
+.project-delete-overview {
+    width: 30%;
+    height: 100%;
+    background-color: dodgerblue;
+}
+
+.project-overview:hover {
+    scale: 1.2;
+    translate: 0px 1em;
+    height: 30%;
+    transition: scale 0.5s ease;
+    margin-bottom: 2em;
+}
+
+.project-overview-active {
+    position: relative;
+    margin-top: 1em;
+    width: 80%;
+    background-color: floralwhite;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    height: 30%;
+    scale: 1.2;
+    translate: 0px 1em;
+    margin-bottom: 2em;
+}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,SAAS;IACT,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,WAAW;IACX,+BAA+B;IAC/B,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;IACX,2BAA2B;IAC3B,aAAa;IACb,8BAA8B;IAC9B,6BAA6B;IAC7B,WAAW;AACf;;;AAGA;IACI,sBAAsB;IACtB,cAAc;IACd,oBAAoB;IACpB,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,wBAAwB;IACxB,cAAc;IACd,WAAW;IACX,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,WAAW;IACX,sBAAsB;IACtB,UAAU;IACV,eAAe;IACf,uBAAuB;IACvB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;AAClC;;;AAGA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,iBAAiB;IACjB,eAAe;AACnB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,qBAAqB;AACzB;;;AAGA;IACI,yBAAyB;IACzB,cAAc;IACd,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;;AAGA;IACI,kBAAkB;IAClB,eAAe;IACf,UAAU;IACV,WAAW;IACX,6BAA6B;IAC7B,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,QAAQ;AACZ;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,4BAA4B;AAChC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,4BAA4B;AAChC;;AAEA;IACI,UAAU;IACV,kBAAkB;IAClB,WAAW;IACX,2BAA2B;IAC3B,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,eAAe;IACf,UAAU;IACV,6BAA6B;IAC7B,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,WAAW;IACX,UAAU;IACV,kBAAkB;IAClB,kBAAkB;AACtB","sourcesContent":["body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 0;\r\n}\r\n\r\n.full-page-container {\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.header {\r\n    width: 100%;\r\n    height: 10%;\r\n    background-color: lightseagreen;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.grid-container {\r\n    width: 100%;\r\n    height: 90%;\r\n    background-color: slateblue;\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n    grid-template-rows: 1fr 2.5fr;\r\n    height: 90%;\r\n}\r\n\r\n\r\n.grid-element-1 {\r\n    background-color: plum;\r\n    grid-column: 1;\r\n    grid-row: 1 / span 1;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.checkbox-input-category+label {\r\n    cursor: pointer;\r\n}\r\n\r\n.grid-element-1>form {\r\n    height: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.grid-element-1>form>#task-input {\r\n    width: 34em;\r\n    height: 4em;\r\n}\r\n\r\n#submit-task {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n#submit-task-button {\r\n    width: 10em;\r\n    height: 2em;\r\n}\r\n\r\n.grid-element-2 {\r\n    background-color: yellow;\r\n    grid-column: 1;\r\n    grid-row: 2;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.project-list-element {\r\n    width: 90%;\r\n    height: 15%;\r\n    background-color: aqua;\r\n    z-index: 1;\r\n    margin-top: 1em;\r\n    border: 2px black solid;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n\r\n.go-to-project {\r\n    width: 80%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    padding-left: 1em;\r\n    cursor: pointer;\r\n}\r\n\r\n.go-to-project:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.delete-project {\r\n    width: 20%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.trashbin-icon:hover {\r\n    transform: scale(1.2);\r\n}\r\n\r\n\r\n.grid-element-3 {\r\n    background-color: crimson;\r\n    grid-column: 2;\r\n    grid-row: 1/3;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n\r\n.project-overview {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    height: 20%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    scale: 1;\r\n}\r\n\r\n.project-data {\r\n    width: 70%;\r\n    height: 100%;\r\n    background-color: blueviolet;\r\n}\r\n\r\n.project-delete-overview {\r\n    width: 30%;\r\n    height: 100%;\r\n    background-color: dodgerblue;\r\n}\r\n\r\n.project-overview:hover {\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    height: 30%;\r\n    transition: scale 0.5s ease;\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.project-overview-active {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    height: 30%;\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    margin-bottom: 2em;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -655,6 +686,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // const projectElement: HTMLButtonElement = document.querySelector(".category-list-element")!;
 const submitFormButton = document.getElementById("submit-task-button");
+const projectOverviewList = document.querySelectorAll(".project-overview");
 const categories = [
     _classes_project__WEBPACK_IMPORTED_MODULE_1__.Category.GENERAL,
     _classes_project__WEBPACK_IMPORTED_MODULE_1__.Category.WORK,
@@ -686,6 +718,21 @@ if (submitFormButton) {
         (0,_render_functions_renderNewProject__WEBPACK_IMPORTED_MODULE_2__.renderNewProject)();
     });
 }
+;
+projectOverviewList.forEach((project) => {
+    project.addEventListener("click", () => {
+        project.classList.toggle("project-overview-active");
+    });
+});
+document.addEventListener("click", (event) => {
+    const activeProjectElements = document.querySelectorAll(".project-overview-active");
+    activeProjectElements.forEach((activeProject) => {
+        if (!activeProject.contains(event.target)) {
+            activeProject.classList.remove("project-overview-active");
+            activeProject.classList.add("project-overview");
+        }
+    });
+});
 
 
 /***/ }),
@@ -705,11 +752,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! .. */ "./src/index.ts");
 
 
+const projects = [];
+let projectId = 1;
 const rendertrashBinIcon = () => {
     const trashbinIcon = document.createElement("img");
     trashbinIcon.setAttribute("src", "images/trashbin.svg");
     trashbinIcon.classList.add("trashbin-icon");
     trashbinIcon.setAttribute("alt", "trashbin-icon");
+    trashbinIcon.setAttribute("id", `delete-${projectId}`);
     return trashbinIcon;
 };
 const renderNewProject = () => {
@@ -718,7 +768,8 @@ const renderNewProject = () => {
     const projectNameInput = document.querySelector("#task-input");
     let newProject = new _classes_project__WEBPACK_IMPORTED_MODULE_1__.Project(projectNameInput.value, selectedCategory, new Date());
     const newProjectELement = document.createElement("div");
-    newProjectELement.classList.add("category-list-element");
+    newProjectELement.classList.add("project-list-element");
+    newProjectELement.id = `project-${projectId}`;
     const newProjectDescription = document.createElement("div");
     newProjectDescription.classList.add("go-to-project");
     newProjectDescription.innerText = newProject.name;
@@ -729,7 +780,9 @@ const renderNewProject = () => {
     newProjectELement.appendChild(newProjectDescription);
     newProjectELement.appendChild(trashbinDiv);
     projectsOverview.appendChild(newProjectELement);
+    projects.push(newProject);
     console.log(newProject);
+    projectId++;
 };
 
 

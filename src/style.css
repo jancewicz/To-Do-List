@@ -74,7 +74,7 @@ body {
     align-items: center;
 }
 
-.category-list-element {
+.project-list-element {
     width: 90%;
     height: 15%;
     background-color: aqua;
@@ -125,16 +125,47 @@ body {
 
 
 .project-overview {
+    position: relative;
     margin-top: 1em;
     width: 80%;
     height: 20%;
     background-color: floralwhite;
-    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    scale: 1;
 }
 
+.project-data {
+    width: 70%;
+    height: 100%;
+    background-color: blueviolet;
+}
 
-.testDiv {
-    width: 50px;
-    height: 50px;
-    border: 10px solid black;
+.project-delete-overview {
+    width: 30%;
+    height: 100%;
+    background-color: dodgerblue;
+}
+
+.project-overview:hover {
+    scale: 1.2;
+    translate: 0px 1em;
+    height: 30%;
+    transition: scale 0.5s ease;
+    margin-bottom: 2em;
+}
+
+.project-overview-active {
+    position: relative;
+    margin-top: 1em;
+    width: 80%;
+    background-color: floralwhite;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    height: 30%;
+    scale: 1.2;
+    translate: 0px 1em;
+    margin-bottom: 2em;
 }

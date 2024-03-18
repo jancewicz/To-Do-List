@@ -5,6 +5,7 @@ import { renderNewProject, rendertrashBinIcon } from './render-functions/renderN
 
 // const projectElement: HTMLButtonElement = document.querySelector(".category-list-element")!;
 const submitFormButton = document.getElementById("submit-task-button") as HTMLButtonElement | null;
+const projectOverviewList: NodeListOf<HTMLElement> = document.querySelectorAll(".project-overview");
 
 const categories: Category[] = [
     Category.GENERAL,
@@ -33,7 +34,7 @@ export const selectCategory = () => {
             break;
     }
     return selectedCategory;
-}
+};
 
 
 if (submitFormButton) {
@@ -41,6 +42,26 @@ if (submitFormButton) {
         event.preventDefault();
         renderNewProject();
     })
-}
+};
+
+
+projectOverviewList.forEach((project: HTMLElement) => {
+    project.addEventListener("click", () => {
+        project.classList.toggle("project-overview-active");
+    });
+});
+
+
+document.addEventListener("click", (event) => {
+    const activeProjectElements: NodeListOf<HTMLElement> = document.querySelectorAll(".project-overview-active");
+    activeProjectElements.forEach((activeProject: HTMLElement) => {
+        if (!activeProject.contains(event.target as Node)) {
+            activeProject.classList.remove("project-overview-active");
+            activeProject.classList.add("project-overview");
+        }
+    });
+});
+
+
 
 
