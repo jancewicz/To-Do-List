@@ -49,17 +49,17 @@ body {
     justify-content: space-between;
 }
 
-.grid-element-1>form>#task-input {
+.grid-element-1>form>#project-input {
     width: 34em;
     height: 4em;
 }
 
-#submit-task {
+#submit-project {
     display: flex;
     justify-content: center;
 }
 
-#submit-task-button {
+#submit-project-button {
     width: 10em;
     height: 2em;
 }
@@ -85,7 +85,6 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-
 
 .go-to-project {
     width: 80%;
@@ -142,6 +141,7 @@ body {
     background-color: blueviolet;
 }
 
+
 .project-delete-overview {
     width: 30%;
     height: 100%;
@@ -168,4 +168,10 @@ body {
     scale: 1.2;
     translate: 0px 1em;
     margin-bottom: 2em;
+}
+
+input[type="date"] {
+    background: transparent;
+    color: white;
+    border-radius: 4px;
 }

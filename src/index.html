@@ -20,7 +20,7 @@
             <div class="grid-element-1">
 
                 <form action="">
-                    <input type="text" id="task-input" name="task-input" placeholder="Create new project:">
+                    <input type="text" id="project-input" name="task-input" placeholder="Create new project:">
                     <div>Choose category:</div>
                     <div>
                         <input type="checkbox" id="general" name="general" value="general"
@@ -40,8 +40,8 @@
                             class="checkbox-input-category">
                         <label for="leisure">Leisure time</label>
                     </div>
-                    <div id="submit-task">
-                        <button type="submit" id="submit-task-button">SUBMIT</button>
+                    <div id="submit-project">
+                        <button type="submit" id="submit-project-button">SUBMIT</button>
                     </div>
                 </form>
 
@@ -56,17 +56,37 @@
                     <div class="project-data">
                         <p id="project-overview-name">PROJECT NAME</p>
 
+                        <ul class="tasks-list-1">
+                            <form>
+                                <input type="text" id="new-task1" name="new-task" class="get-new-task">
+                                <!--<input type="date" class="due-to-input">-->
+                                <button type="submit" class="add-task">Add new task</button>
+                            </form>
+                            <li>Task 1</li>
+                            <li>Task 2</li>
+                        </ul>
+
                     </div>
                     <div class="project-delete-overview"></div>
                 </div>
 
                 <div class="project-overview">
                     <div class="project-data">
-                        <p class="project-overview-name">PROJECT NAME</p>
-
+                        <p id="project-overview-name">PROJECT NAME</p>
+                        <div class="test-div">
+                            <ul>
+                                <form>
+                                    <input type="text" id="new-task" name="new-task">
+                                    <button type="submit" id="">Add new task</button>
+                                </form>
+                                <li>Task 1</li>
+                                <li>Task 2</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="project-delete-overview"></div>
                 </div>
+
 
             </div>
         </div>

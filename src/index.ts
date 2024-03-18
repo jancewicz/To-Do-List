@@ -1,10 +1,9 @@
 import './style.css';
 import { Project, Category } from './classes/project';
-import { renderNewProject, rendertrashBinIcon } from './render-functions/renderNewProject';
+import { renderNewProject, rendertrashBinIcon, removeProjectFromContainer } from './render-functions/renderNewProject';
 
 
-// const projectElement: HTMLButtonElement = document.querySelector(".category-list-element")!;
-const submitFormButton = document.getElementById("submit-task-button") as HTMLButtonElement | null;
+const submitFormButton = document.getElementById("submit-project-button") as HTMLButtonElement | null;
 const projectOverviewList: NodeListOf<HTMLElement> = document.querySelectorAll(".project-overview");
 
 const categories: Category[] = [
@@ -48,6 +47,7 @@ if (submitFormButton) {
 projectOverviewList.forEach((project: HTMLElement) => {
     project.addEventListener("click", () => {
         project.classList.toggle("project-overview-active");
+
     });
 });
 
@@ -61,6 +61,10 @@ document.addEventListener("click", (event) => {
         }
     });
 });
+
+removeProjectFromContainer();
+
+
 
 
 

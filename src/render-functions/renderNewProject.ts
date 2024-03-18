@@ -2,7 +2,7 @@ import { Project } from "../classes/project";
 import { selectCategory } from "..";
 import { Category } from "../classes/project";
 
-const projects: Project[] = [];
+let projects: Project[] = [];
 let projectId: number = 1;
 
 
@@ -20,7 +20,7 @@ export const renderNewProject = () => {
     const selectedCategory: Category = selectCategory();
 
     const projectsOverview: HTMLElement = document.querySelector(".grid-element-2")!;
-    const projectNameInput: HTMLInputElement = document.querySelector("#task-input")!;
+    const projectNameInput: HTMLInputElement = document.querySelector("#project-input")!;
 
     let newProject: Project = new Project(projectNameInput.value, selectedCategory, new Date());
 
@@ -45,6 +45,43 @@ export const renderNewProject = () => {
 
     projects.push(newProject);
     console.log(newProject);
+    console.log(projects);
     projectId++;
 }
 
+export const removeProjectFromContainer = () => {
+    const projectsContainerElement: HTMLElement = document.querySelector(".grid-element-2")!;
+
+    projectsContainerElement.addEventListener("click", (event: Event) => {
+        const target = event.target as HTMLElement;
+
+        if (target.tagName === "IMG" && target.closest(".delete-project")) {
+
+            const trashbins = [...document.querySelectorAll(".delete-project img")];
+            const trashbinIndex = trashbins.indexOf(target);
+            target.parentElement?.parentElement?.remove();
+
+            projects = projects.filter((el: Project, index: number) => {
+                return index !== trashbinIndex;
+            });
+            console.log(projects);
+        }
+
+    })
+};
+
+
+
+
+// const addNewTask = () => {
+//     const addTaskButtonElement: NodeListOf<HTMLButtonElement> = document.querySelectorAll(".add-task")!;
+//     const tasksList: HTMLUListElement = document.querySelectorAll(".tasks-list");
+//     const newTaskInputElement: HTMLInputElement = document.querySelectorAll(".get-new-task");
+
+
+
+
+//     addTaskButtonElement.forEach((button) => {
+
+//     })
+// }
