@@ -51,6 +51,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     height: 90%;
 }
 
+.categories {
+    list-style: none;
+}
+
 
 .grid-element-1 {
     background-color: plum;
@@ -113,6 +117,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     width: 80%;
     height: 100%;
     display: flex;
+    flex-direction: row;
     align-items: center;
     padding-left: 1em;
     cursor: pointer;
@@ -135,7 +140,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     transform: scale(1.2);
 }
 
-
 .grid-element-3 {
     background-color: crimson;
     grid-column: 2;
@@ -144,7 +148,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     flex-direction: column;
     align-items: center;
 }
-
 
 .project-overview {
     position: relative;
@@ -156,19 +159,20 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     flex-direction: row;
     cursor: pointer;
     scale: 1;
+    border: 10px solid black;
+    border-radius: 15px;
+
+
 }
 
 .project-data {
     width: 70%;
     height: 100%;
     background-color: blueviolet;
-}
-
-
-.project-delete-overview {
-    width: 30%;
-    height: 100%;
-    background-color: dodgerblue;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
 }
 
 .project-overview:hover {
@@ -193,11 +197,83 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     margin-bottom: 2em;
 }
 
+.input-to-insert {
+    width: 60%;
+    height: 100%;
+    background-color: paleturquoise;
+}
+
+.input-to-insert-right {
+    width: 40%;
+    height: 100%;
+    background-color: darksalmon;
+}
+
+
 input[type="date"] {
     background: transparent;
     color: white;
     border-radius: 4px;
-}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,SAAS;IACT,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,WAAW;IACX,+BAA+B;IAC/B,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;IACX,2BAA2B;IAC3B,aAAa;IACb,8BAA8B;IAC9B,6BAA6B;IAC7B,WAAW;AACf;;;AAGA;IACI,sBAAsB;IACtB,cAAc;IACd,oBAAoB;IACpB,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,wBAAwB;IACxB,cAAc;IACd,WAAW;IACX,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,WAAW;IACX,sBAAsB;IACtB,UAAU;IACV,eAAe;IACf,uBAAuB;IACvB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,iBAAiB;IACjB,eAAe;AACnB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,qBAAqB;AACzB;;;AAGA;IACI,yBAAyB;IACzB,cAAc;IACd,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;;AAGA;IACI,kBAAkB;IAClB,eAAe;IACf,UAAU;IACV,WAAW;IACX,6BAA6B;IAC7B,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,QAAQ;AACZ;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,4BAA4B;AAChC;;;AAGA;IACI,UAAU;IACV,YAAY;IACZ,4BAA4B;AAChC;;AAEA;IACI,UAAU;IACV,kBAAkB;IAClB,WAAW;IACX,2BAA2B;IAC3B,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,eAAe;IACf,UAAU;IACV,6BAA6B;IAC7B,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,WAAW;IACX,UAAU;IACV,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA;IACI,uBAAuB;IACvB,YAAY;IACZ,kBAAkB;AACtB","sourcesContent":["body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 0;\r\n}\r\n\r\n.full-page-container {\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.header {\r\n    width: 100%;\r\n    height: 10%;\r\n    background-color: lightseagreen;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.grid-container {\r\n    width: 100%;\r\n    height: 90%;\r\n    background-color: slateblue;\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n    grid-template-rows: 1fr 2.5fr;\r\n    height: 90%;\r\n}\r\n\r\n\r\n.grid-element-1 {\r\n    background-color: plum;\r\n    grid-column: 1;\r\n    grid-row: 1 / span 1;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.checkbox-input-category+label {\r\n    cursor: pointer;\r\n}\r\n\r\n.grid-element-1>form {\r\n    height: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.grid-element-1>form>#project-input {\r\n    width: 34em;\r\n    height: 4em;\r\n}\r\n\r\n#submit-project {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n#submit-project-button {\r\n    width: 10em;\r\n    height: 2em;\r\n}\r\n\r\n.grid-element-2 {\r\n    background-color: yellow;\r\n    grid-column: 1;\r\n    grid-row: 2;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.project-list-element {\r\n    width: 90%;\r\n    height: 15%;\r\n    background-color: aqua;\r\n    z-index: 1;\r\n    margin-top: 1em;\r\n    border: 2px black solid;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n.go-to-project {\r\n    width: 80%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    padding-left: 1em;\r\n    cursor: pointer;\r\n}\r\n\r\n.go-to-project:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.delete-project {\r\n    width: 20%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.trashbin-icon:hover {\r\n    transform: scale(1.2);\r\n}\r\n\r\n\r\n.grid-element-3 {\r\n    background-color: crimson;\r\n    grid-column: 2;\r\n    grid-row: 1/3;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n\r\n.project-overview {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    height: 20%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    scale: 1;\r\n}\r\n\r\n.project-data {\r\n    width: 70%;\r\n    height: 100%;\r\n    background-color: blueviolet;\r\n}\r\n\r\n\r\n.project-delete-overview {\r\n    width: 30%;\r\n    height: 100%;\r\n    background-color: dodgerblue;\r\n}\r\n\r\n.project-overview:hover {\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    height: 30%;\r\n    transition: scale 0.5s ease;\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.project-overview-active {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    height: 30%;\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    margin-bottom: 2em;\r\n}\r\n\r\ninput[type=\"date\"] {\r\n    background: transparent;\r\n    color: white;\r\n    border-radius: 4px;\r\n}"],"sourceRoot":""}]);
+}
+
+.tasks {
+    margin-top: 1em;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.project-data-right-sector {
+    width: 30%;
+    height: 100%;
+    background-color: greenyellow;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-sector-upper {
+    height: 80em;
+    width: 100%;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.priority {
+    width: 40%;
+    height: 60%;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-sector-lower {
+    height: 500%;
+    width: 100%;
+    background-color: cornflowerblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-tasks-overview:hover {
+    transform: scale(1.4);
+}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,SAAS;IACT,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,WAAW;IACX,+BAA+B;IAC/B,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;IACX,2BAA2B;IAC3B,aAAa;IACb,8BAA8B;IAC9B,6BAA6B;IAC7B,WAAW;AACf;;AAEA;IACI,gBAAgB;AACpB;;;AAGA;IACI,sBAAsB;IACtB,cAAc;IACd,oBAAoB;IACpB,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,wBAAwB;IACxB,cAAc;IACd,WAAW;IACX,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,WAAW;IACX,sBAAsB;IACtB,UAAU;IACV,eAAe;IACf,uBAAuB;IACvB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,mBAAmB;IACnB,iBAAiB;IACjB,eAAe;AACnB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,yBAAyB;IACzB,cAAc;IACd,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,eAAe;IACf,UAAU;IACV,WAAW;IACX,6BAA6B;IAC7B,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,QAAQ;IACR,wBAAwB;IACxB,mBAAmB;;;AAGvB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,4BAA4B;IAC5B,gBAAgB;IAChB,kBAAkB;IAClB,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,kBAAkB;IAClB,WAAW;IACX,2BAA2B;IAC3B,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,eAAe;IACf,UAAU;IACV,6BAA6B;IAC7B,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,WAAW;IACX,UAAU;IACV,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,+BAA+B;AACnC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,4BAA4B;AAChC;;;AAGA;IACI,uBAAuB;IACvB,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,6BAA6B;IAC7B,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,wBAAwB;IACxB,aAAa;IACb,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI,UAAU;IACV,WAAW;IACX,uBAAuB;IACvB,aAAa;IACb,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,gCAAgC;IAChC,aAAa;IACb,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI,qBAAqB;AACzB","sourcesContent":["body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 0;\r\n}\r\n\r\n.full-page-container {\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.header {\r\n    width: 100%;\r\n    height: 10%;\r\n    background-color: lightseagreen;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.grid-container {\r\n    width: 100%;\r\n    height: 90%;\r\n    background-color: slateblue;\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n    grid-template-rows: 1fr 2.5fr;\r\n    height: 90%;\r\n}\r\n\r\n.categories {\r\n    list-style: none;\r\n}\r\n\r\n\r\n.grid-element-1 {\r\n    background-color: plum;\r\n    grid-column: 1;\r\n    grid-row: 1 / span 1;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.checkbox-input-category+label {\r\n    cursor: pointer;\r\n}\r\n\r\n.grid-element-1>form {\r\n    height: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.grid-element-1>form>#project-input {\r\n    width: 34em;\r\n    height: 4em;\r\n}\r\n\r\n#submit-project {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n#submit-project-button {\r\n    width: 10em;\r\n    height: 2em;\r\n}\r\n\r\n.grid-element-2 {\r\n    background-color: yellow;\r\n    grid-column: 1;\r\n    grid-row: 2;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.project-list-element {\r\n    width: 90%;\r\n    height: 15%;\r\n    background-color: aqua;\r\n    z-index: 1;\r\n    margin-top: 1em;\r\n    border: 2px black solid;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n.go-to-project {\r\n    width: 80%;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    padding-left: 1em;\r\n    cursor: pointer;\r\n}\r\n\r\n.go-to-project:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.delete-project {\r\n    width: 20%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.trashbin-icon:hover {\r\n    transform: scale(1.2);\r\n}\r\n\r\n.grid-element-3 {\r\n    background-color: crimson;\r\n    grid-column: 2;\r\n    grid-row: 1/3;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.project-overview {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    height: 20%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    scale: 1;\r\n    border: 10px solid black;\r\n    border-radius: 15px;\r\n\r\n\r\n}\r\n\r\n.project-data {\r\n    width: 70%;\r\n    height: 100%;\r\n    background-color: blueviolet;\r\n    overflow: scroll;\r\n    overflow-x: hidden;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.project-overview:hover {\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    height: 30%;\r\n    transition: scale 0.5s ease;\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.project-overview-active {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    height: 30%;\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.input-to-insert {\r\n    width: 60%;\r\n    height: 100%;\r\n    background-color: paleturquoise;\r\n}\r\n\r\n.input-to-insert-right {\r\n    width: 40%;\r\n    height: 100%;\r\n    background-color: darksalmon;\r\n}\r\n\r\n\r\ninput[type=\"date\"] {\r\n    background: transparent;\r\n    color: white;\r\n    border-radius: 4px;\r\n}\r\n\r\n.tasks {\r\n    margin-top: 1em;\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    width: 10px;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n    background: #f1f1f1;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n    background: #888;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n    background: #555;\r\n}\r\n\r\n.project-data-right-sector {\r\n    width: 30%;\r\n    height: 100%;\r\n    background-color: greenyellow;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.right-sector-upper {\r\n    height: 80em;\r\n    width: 100%;\r\n    background-color: bisque;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.priority {\r\n    width: 40%;\r\n    height: 60%;\r\n    border: 2px solid black;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.right-sector-lower {\r\n    height: 500%;\r\n    width: 100%;\r\n    background-color: cornflowerblue;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.delete-tasks-overview:hover {\r\n    transform: scale(1.4);\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -768,6 +844,8 @@ const rendertrashBinIcon = () => {
     trashbinIcon.setAttribute("alt", "trashbin-icon");
     trashbinIcon.setAttribute("id", `delete-${projectId}`);
     return trashbinIcon;
+};
+const renderCategories = () => {
 };
 const renderNewProject = () => {
     const selectedCategory = (0,___WEBPACK_IMPORTED_MODULE_0__.selectCategory)();

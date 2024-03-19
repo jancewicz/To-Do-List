@@ -22,24 +22,27 @@
                 <form action="">
                     <input type="text" id="project-input" name="task-input" placeholder="Create new project:">
                     <div>Choose category:</div>
-                    <div>
-                        <input type="checkbox" id="general" name="general" value="general"
-                            class="checkbox-input-category">
-                        <label for="general">General</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="work" name="work" value="work" class="checkbox-input-category">
-                        <label for="work">Work</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="sport" name="sport" value="sport" class="checkbox-input-category">
-                        <label for="sport">Sport</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="leisure" name="leisure" value="leisure"
-                            class="checkbox-input-category">
-                        <label for="leisure">Leisure time</label>
-                    </div>
+                    <ul class="categories">
+                        <li>
+                            <input type="checkbox" id="general" name="general" value="general"
+                                class="checkbox-input-category">
+                            <label for="general">General</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="work" name="work" value="work" class="checkbox-input-category">
+                            <label for="work">Work</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="sport" name="sport" value="sport"
+                                class="checkbox-input-category">
+                            <label for="sport">Sport</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="leisure" name="leisure" value="leisure"
+                                class="checkbox-input-category">
+                            <label for="leisure">Leisure time</label>
+                        </li>
+                    </ul>
                     <div id="submit-project">
                         <button type="submit" id="submit-project-button">SUBMIT</button>
                     </div>
@@ -53,22 +56,42 @@
             <div class="grid-element-3">
 
                 <div class="project-overview">
+
                     <div class="project-data">
-                        <p id="project-overview-name">PROJECT NAME</p>
-
-                        <ul class="tasks-list-1">
-                            <form>
-                                <input type="text" id="new-task1" name="new-task" class="get-new-task">
-                                <!--<input type="date" class="due-to-input">-->
-                                <button type="submit" class="add-task">Add new task</button>
-                            </form>
-                            <li>Task 1</li>
-                            <li>Task 2</li>
-                        </ul>
-
+                        <div class="input-to-insert">
+                            <p id="project-overview-name">PROJECT NAME</p>
+                            <ul class="tasks-list-1">
+                                <form>
+                                    <input type="text" id="new-task1" name="new-task" class="get-new-task">
+                                    <!--<input type="date" class="due-to-input">-->
+                                    <button type="submit" class="add-task">Add new task</button>
+                                </form>
+                                <ul class="tasks">
+                                    <li>Task 1</li>
+                                    <li>Task 2</li>
+                                    <li>Task 2</li>
+                                    <li>Task 2</li>
+                                    <li>Task 2</li>
+                                    <li>Task 2</li>
+                                    <li>Task 2</li>
+                                    <li>Task 2</li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="input-to-insert-right"></div>
                     </div>
-                    <div class="project-delete-overview"></div>
+                    <div class="project-data-right-sector">
+                        <div class="right-sector-upper">
+                            <div class="priority">
+                                <p>PRIORITY: 1</p>
+                            </div>
+                        </div>
+                        <div class="right-sector-lower"><img class="delete-tasks-overview" src="images/trashbin.svg">
+                        </div>
+                    </div>
                 </div>
+
+
 
                 <div class="project-overview">
                     <div class="project-data">
@@ -79,12 +102,14 @@
                                     <input type="text" id="new-task" name="new-task">
                                     <button type="submit" id="">Add new task</button>
                                 </form>
-                                <li>Task 1</li>
-                                <li>Task 2</li>
+                                <ul class="task">
+                                    <li>Task 1</li>
+                                    <li>Task 2</li>
+                                </ul>
                             </ul>
                         </div>
                     </div>
-                    <div class="project-delete-overview"></div>
+                    <div class="project-data-right-sector"></div>
                 </div>
 
 

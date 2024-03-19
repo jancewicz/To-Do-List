@@ -28,6 +28,10 @@ body {
     height: 90%;
 }
 
+.categories {
+    list-style: none;
+}
+
 
 .grid-element-1 {
     background-color: plum;
@@ -90,6 +94,7 @@ body {
     width: 80%;
     height: 100%;
     display: flex;
+    flex-direction: row;
     align-items: center;
     padding-left: 1em;
     cursor: pointer;
@@ -112,7 +117,6 @@ body {
     transform: scale(1.2);
 }
 
-
 .grid-element-3 {
     background-color: crimson;
     grid-column: 2;
@@ -121,7 +125,6 @@ body {
     flex-direction: column;
     align-items: center;
 }
-
 
 .project-overview {
     position: relative;
@@ -133,19 +136,20 @@ body {
     flex-direction: row;
     cursor: pointer;
     scale: 1;
+    border: 10px solid black;
+    border-radius: 15px;
+
+
 }
 
 .project-data {
     width: 70%;
     height: 100%;
     background-color: blueviolet;
-}
-
-
-.project-delete-overview {
-    width: 30%;
-    height: 100%;
-    background-color: dodgerblue;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
 }
 
 .project-overview:hover {
@@ -170,8 +174,80 @@ body {
     margin-bottom: 2em;
 }
 
+.input-to-insert {
+    width: 60%;
+    height: 100%;
+    background-color: paleturquoise;
+}
+
+.input-to-insert-right {
+    width: 40%;
+    height: 100%;
+    background-color: darksalmon;
+}
+
+
 input[type="date"] {
     background: transparent;
     color: white;
     border-radius: 4px;
+}
+
+.tasks {
+    margin-top: 1em;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.project-data-right-sector {
+    width: 30%;
+    height: 100%;
+    background-color: greenyellow;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-sector-upper {
+    height: 80em;
+    width: 100%;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.priority {
+    width: 40%;
+    height: 60%;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-sector-lower {
+    height: 500%;
+    width: 100%;
+    background-color: cornflowerblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-tasks-overview:hover {
+    transform: scale(1.4);
 }

@@ -16,6 +16,10 @@ export const rendertrashBinIcon = () => {
     return trashbinIcon;
 }
 
+const renderCategories = () => {
+
+}
+
 export const renderNewProject = () => {
     const selectedCategory: Category = selectCategory();
 
