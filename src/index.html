@@ -59,26 +59,23 @@
 
                     <div class="project-data">
                         <div class="input-to-insert">
-                            <p id="project-overview-name">PROJECT NAME</p>
-                            <ul class="tasks-list-1">
-                                <form>
-                                    <input type="text" id="new-task1" name="new-task" class="get-new-task">
-                                    <!--<input type="date" class="due-to-input">-->
-                                    <button type="submit" class="add-task">Add new task</button>
+                            <p class="project-overview-name">PROJECT NAME</p>
+                            <div class="tasks-input">
+                                <form class="enter-new-task">
+                                    <input type="text" id="new-task" name="new-task" class="get-new-task">
+                                    <button type="submit" class="add-task-button">Add new task</button>
                                 </form>
                                 <ul class="tasks">
                                     <li>Task 1</li>
                                     <li>Task 2</li>
-                                    <li>Task 2</li>
-                                    <li>Task 2</li>
-                                    <li>Task 2</li>
-                                    <li>Task 2</li>
-                                    <li>Task 2</li>
-                                    <li>Task 2</li>
                                 </ul>
-                            </ul>
+                            </div>
                         </div>
-                        <div class="input-to-insert-right"></div>
+                        <div class="input-to-insert-right">
+                            <label for="date-due-to">Project has to be done due to: </label>
+                            <input type="date" class="due-to-input" id="date-due-to">
+                            <div class="show-date">THE DATE</div>
+                        </div>
                     </div>
                     <div class="project-data-right-sector">
                         <div class="right-sector-upper">
@@ -90,7 +87,6 @@
                         </div>
                     </div>
                 </div>
-
 
 
                 <div class="project-overview">

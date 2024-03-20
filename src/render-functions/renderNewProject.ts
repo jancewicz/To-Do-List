@@ -16,10 +16,6 @@ export const rendertrashBinIcon = () => {
     return trashbinIcon;
 }
 
-const renderCategories = () => {
-
-}
-
 export const renderNewProject = () => {
     const selectedCategory: Category = selectCategory();
 
@@ -61,9 +57,11 @@ export const removeProjectFromContainer = () => {
 
         if (target.tagName === "IMG" && target.closest(".delete-project")) {
 
-            const trashbins = [...document.querySelectorAll(".delete-project img")];
-            const trashbinIndex = trashbins.indexOf(target);
-            target.parentElement?.parentElement?.remove();
+            const trashbins: Element[] = [...document.querySelectorAll(".delete-project img")];
+            const trashbinIndex: number = trashbins.indexOf(target);
+            if (trashbinIndex !== -1) {
+                trashbins[trashbinIndex].parentElement?.parentElement?.remove();
+            }
 
             projects = projects.filter((el: Project, index: number) => {
                 return index !== trashbinIndex;
@@ -71,7 +69,7 @@ export const removeProjectFromContainer = () => {
             console.log(projects);
         }
 
-    })
+    });
 };
 
 

@@ -1,6 +1,7 @@
 import './style.css';
 import { Project, Category } from './classes/project';
 import { renderNewProject, rendertrashBinIcon, removeProjectFromContainer } from './render-functions/renderNewProject';
+import { renderNewProjectOverview } from './render-functions/renderNewProjectOverview';
 
 
 const submitFormButton = document.getElementById("submit-project-button") as HTMLButtonElement | null;
@@ -58,11 +59,13 @@ document.addEventListener("click", (event) => {
         if (!activeProject.contains(event.target as Node)) {
             activeProject.classList.remove("project-overview-active");
             activeProject.classList.add("project-overview");
+            //testDiv.style.display = "none";
         }
     });
 });
 
 removeProjectFromContainer();
+renderNewProjectOverview();
 
 
 

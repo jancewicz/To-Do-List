@@ -763,6 +763,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var _classes_project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/project */ "./src/classes/project.ts");
 /* harmony import */ var _render_functions_renderNewProject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./render-functions/renderNewProject */ "./src/render-functions/renderNewProject.ts");
+/* harmony import */ var _render_functions_renderNewProjectOverview__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./render-functions/renderNewProjectOverview */ "./src/render-functions/renderNewProjectOverview.ts");
+
 
 
 
@@ -811,10 +813,12 @@ document.addEventListener("click", (event) => {
         if (!activeProject.contains(event.target)) {
             activeProject.classList.remove("project-overview-active");
             activeProject.classList.add("project-overview");
+            //testDiv.style.display = "none";
         }
     });
 });
 (0,_render_functions_renderNewProject__WEBPACK_IMPORTED_MODULE_2__.removeProjectFromContainer)();
+(0,_render_functions_renderNewProjectOverview__WEBPACK_IMPORTED_MODULE_3__.renderNewProjectOverview)();
 
 
 /***/ }),
@@ -844,8 +848,6 @@ const rendertrashBinIcon = () => {
     trashbinIcon.setAttribute("alt", "trashbin-icon");
     trashbinIcon.setAttribute("id", `delete-${projectId}`);
     return trashbinIcon;
-};
-const renderCategories = () => {
 };
 const renderNewProject = () => {
     const selectedCategory = (0,___WEBPACK_IMPORTED_MODULE_0__.selectCategory)();
@@ -878,7 +880,9 @@ const removeProjectFromContainer = () => {
         if (target.tagName === "IMG" && target.closest(".delete-project")) {
             const trashbins = [...document.querySelectorAll(".delete-project img")];
             const trashbinIndex = trashbins.indexOf(target);
-            (_b = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.remove();
+            if (trashbinIndex !== -1) {
+                (_b = (_a = trashbins[trashbinIndex].parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.remove();
+            }
             projects = projects.filter((el, index) => {
                 return index !== trashbinIndex;
             });
@@ -893,6 +897,75 @@ const removeProjectFromContainer = () => {
 //     addTaskButtonElement.forEach((button) => {
 //     })
 // }
+
+
+/***/ }),
+
+/***/ "./src/render-functions/renderNewProjectOverview.ts":
+/*!**********************************************************!*\
+  !*** ./src/render-functions/renderNewProjectOverview.ts ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   renderNewOverview: () => (/* binding */ renderNewOverview),
+/* harmony export */   renderNewProjectOverview: () => (/* binding */ renderNewProjectOverview),
+/* harmony export */   saveDataInOverview: () => (/* binding */ saveDataInOverview)
+/* harmony export */ });
+const projectsContainerElement = document.querySelector(".grid-element-2");
+const overviewsContainer = document.querySelector(".grid-element-3");
+const renderNewProjectOverview = () => {
+    projectsContainerElement.addEventListener("click", (event) => {
+        const target = event.target;
+        if (target.className === "go-to-project") {
+            const projectNameElements = [...document.querySelectorAll(".go-to-project")];
+            const projectIndex = projectNameElements.indexOf(target);
+            // more code after render functions is done
+            console.log(`Clicking on ${projectNameElements[projectIndex].textContent}`);
+            renderNewOverview(projectNameElements, projectIndex);
+        }
+    });
+};
+const renderNewOverview = (projectNameElements, projectIndex) => {
+    const projectOverviewContainer = document.createElement("div");
+    projectOverviewContainer.classList.add("project-overview");
+    const projectDataContainer = document.createElement("div");
+    ;
+    projectDataContainer.classList.add("project-data");
+    let dataInputContainer = saveDataInOverview(projectNameElements, projectIndex);
+    projectDataContainer.appendChild(dataInputContainer);
+    projectOverviewContainer.appendChild(projectDataContainer);
+    overviewsContainer.appendChild(projectOverviewContainer);
+};
+const saveDataInOverview = (projectNameElements, projectIndex) => {
+    let dataInputContainer = document.createElement("div");
+    dataInputContainer.classList.add("input-to-insert");
+    const projectName = document.createElement("p");
+    projectName.classList.add("project-overview-name");
+    projectName.innerText = projectNameElements[projectIndex].textContent;
+    const taskListContainerElement = document.createElement("div");
+    taskListContainerElement.classList.add("tasks-input");
+    const formContainerELement = document.createElement("form");
+    formContainerELement.classList.add("enter-new-task");
+    const newTaskInputElement = document.createElement("input");
+    newTaskInputElement.setAttribute("type", "text");
+    newTaskInputElement.setAttribute("id", "new-task");
+    newTaskInputElement.setAttribute("name", "new-task");
+    newTaskInputElement.classList.add("get-new-task");
+    const addNewTaskButtonElement = document.createElement("button");
+    addNewTaskButtonElement.setAttribute("type", "submit");
+    addNewTaskButtonElement.classList.add("add-task-button");
+    addNewTaskButtonElement.textContent = "Add new task";
+    formContainerELement.appendChild(newTaskInputElement);
+    formContainerELement.appendChild(addNewTaskButtonElement);
+    const taskUListElement = document.createElement("ul");
+    taskListContainerElement.classList.add("tasks");
+    taskListContainerElement.appendChild(formContainerELement);
+    dataInputContainer.appendChild(projectName);
+    dataInputContainer.appendChild(taskListContainerElement);
+    return dataInputContainer;
+};
 
 
 /***/ })
