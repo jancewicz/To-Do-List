@@ -960,10 +960,27 @@ const saveDataInOverview = (projectNameElements, projectIndex) => {
     formContainerELement.appendChild(newTaskInputElement);
     formContainerELement.appendChild(addNewTaskButtonElement);
     const taskUListElement = document.createElement("ul");
-    taskListContainerElement.classList.add("tasks");
+    taskUListElement.classList.add("tasks");
     taskListContainerElement.appendChild(formContainerELement);
+    taskListContainerElement.appendChild(taskUListElement);
     dataInputContainer.appendChild(projectName);
     dataInputContainer.appendChild(taskListContainerElement);
+    (() => {
+        overviewsContainer.addEventListener("click", (event) => {
+            const target = event.target;
+            event.preventDefault();
+            if (target.className === "add-task-button" && target.closest(".enter-new-task")) {
+                const newTaskButtons = [...document.querySelectorAll(".add-task-button")];
+                const indexOfNewTaskButton = newTaskButtons.indexOf(target);
+                if (indexOfNewTaskButton !== -1) {
+                    const newTaskListElement = document.createElement("li");
+                    const inputValue = newTaskInputElement.value;
+                    newTaskListElement.innerText = inputValue;
+                    taskUListElement.appendChild(newTaskListElement);
+                }
+            }
+        });
+    })();
     return dataInputContainer;
 };
 

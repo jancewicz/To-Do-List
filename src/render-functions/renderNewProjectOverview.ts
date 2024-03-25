@@ -20,7 +20,10 @@ export const renderNewProjectOverview = () => {
 };
 
 
-export const renderNewOverview = (projectNameElements: Element[], projectIndex: number) => {
+export const renderNewOverview = (
+    projectNameElements: Element[],
+    projectIndex: number
+) => {
     const projectOverviewContainer: HTMLElement = document.createElement("div");
     projectOverviewContainer.classList.add("project-overview");
 
@@ -40,7 +43,10 @@ export const renderNewOverview = (projectNameElements: Element[], projectIndex: 
 }
 
 
-export const saveDataInOverview = (projectNameElements: Element[], projectIndex: number) => {
+export const saveDataInOverview = (
+    projectNameElements: Element[],
+    projectIndex: number
+) => {
 
     let dataInputContainer: HTMLElement = document.createElement("div");
     dataInputContainer.classList.add("input-to-insert");
@@ -70,14 +76,42 @@ export const saveDataInOverview = (projectNameElements: Element[], projectIndex:
     formContainerELement.appendChild(addNewTaskButtonElement);
 
     const taskUListElement: HTMLUListElement = document.createElement("ul");
-    taskListContainerElement.classList.add("tasks");
+    taskUListElement.classList.add("tasks");
+
 
     taskListContainerElement.appendChild(formContainerELement);
+    taskListContainerElement.appendChild(taskUListElement);
 
 
     dataInputContainer.appendChild(projectName);
     dataInputContainer.appendChild(taskListContainerElement);
 
+    (() => {
+        overviewsContainer.addEventListener("click", (event: Event) => {
+            const target = event.target as HTMLElement;
+            event.preventDefault();
+
+            if (target.className === "add-task-button" && target.closest(".enter-new-task")) {
+
+                const newTaskButtons: Element[] = [...document.querySelectorAll(".add-task-button")];
+                const indexOfNewTaskButton: number = newTaskButtons.indexOf(target);
+                if (indexOfNewTaskButton !== -1) {
+
+                    const newTaskListElement: HTMLLIElement = document.createElement("li");
+                    const inputValue: string = newTaskInputElement.value;
+                    newTaskListElement.innerText = inputValue;
+                    taskUListElement.appendChild(newTaskListElement);
+                }
+            }
+        })
+    })();
+
     return dataInputContainer;
 
 }
+
+
+
+
+
+
