@@ -47,6 +47,7 @@ export const renderNewProject = () => {
     console.log(newProject);
     console.log(projects);
     projectId++;
+    projectNameInput.value = "";
 }
 
 export const removeProjectFromContainer = () => {

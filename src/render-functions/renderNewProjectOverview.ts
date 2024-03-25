@@ -31,25 +31,30 @@ export const renderNewOverview = (
     projectDataContainer.classList.add("project-data");
 
 
-    let dataInputContainer: HTMLElement = saveDataInOverview(projectNameElements, projectIndex)
+    const dataInputContainer: HTMLElement = renderDataInputContainerLeftSide(projectNameElements, projectIndex);
+    const middleSideInputContainer: HTMLElement = renderDataInputContainerMiddleSide();
+
+    const rightSideInputContainer: HTMLElement = renderDataInputContainerRightSide();
 
 
     projectDataContainer.appendChild(dataInputContainer);
+    projectDataContainer.appendChild(middleSideInputContainer);
 
     projectOverviewContainer.appendChild(projectDataContainer);
+    projectOverviewContainer.appendChild(rightSideInputContainer);
 
     overviewsContainer.appendChild(projectOverviewContainer);
 
 }
 
 
-export const saveDataInOverview = (
+export const renderDataInputContainerLeftSide = (
     projectNameElements: Element[],
     projectIndex: number
 ) => {
 
     let dataInputContainer: HTMLElement = document.createElement("div");
-    dataInputContainer.classList.add("input-to-insert");
+    dataInputContainer.classList.add("input-to-insert-left");
 
     const projectName: HTMLParagraphElement = document.createElement("p");
     projectName.classList.add("project-overview-name");
@@ -101,6 +106,7 @@ export const saveDataInOverview = (
                     const inputValue: string = newTaskInputElement.value;
                     newTaskListElement.innerText = inputValue;
                     taskUListElement.appendChild(newTaskListElement);
+                    newTaskInputElement.value = "";
                 }
             }
         })
@@ -110,6 +116,82 @@ export const saveDataInOverview = (
 
 }
 
+
+
+export const renderDataInputContainerMiddleSide = () => {
+
+    const rightSector: HTMLElement = document.createElement("div");
+    rightSector.classList.add("input-to-insert-right");
+
+    const dueToDateLabel: HTMLLabelElement = document.createElement("label");
+    dueToDateLabel.setAttribute("for", "date-due-to");
+    dueToDateLabel.innerText = "Project has to be done due to: ";
+
+    const dueToDateInput: HTMLInputElement = document.createElement("input");
+    dueToDateInput.classList.add("due-to-input");
+    dueToDateInput.setAttribute("type", "date");
+    dueToDateInput.setAttribute("id", "date-due-to");
+
+    const chosenDateContainer: HTMLElement = document.createElement("div");
+    chosenDateContainer.classList.add("show-date");
+    chosenDateContainer.innerText = "D A T E";
+
+    rightSector.appendChild(dueToDateLabel);
+    rightSector.appendChild(dueToDateInput);
+    rightSector.appendChild(chosenDateContainer);
+
+
+    // need IFFY HERE TO APPLY DATE INPUT TO IT'S DIV
+    return rightSector;
+}
+
+export const renderDataInputContainerRightSide = () => {
+
+    const rightSectorContainerElement: HTMLElement = document.createElement("div");
+    rightSectorContainerElement.classList.add("project-data-right-sector");
+
+    const rightSectorUpperPartContainer: HTMLElement = document.createElement("div");
+    rightSectorUpperPartContainer.classList.add("right-sector-upper");
+
+    const priorityDataContainer: HTMLElement = document.createElement("div");
+    priorityDataContainer.classList.add("priority");
+    priorityDataContainer.innerText = "1"; // hardcoded change later
+
+    rightSectorUpperPartContainer.appendChild(priorityDataContainer);
+
+
+    const rightSectorLowerPartContainer: HTMLElement = document.createElement("div");
+    rightSectorLowerPartContainer.classList.add("right-sector-lower");
+
+    const trashBinIcon: HTMLImageElement = document.createElement("img");
+    trashBinIcon.classList.add("delete-tasks-overview");
+    trashBinIcon.setAttribute("src", "images/trashbin.svg");
+
+    rightSectorLowerPartContainer.appendChild(trashBinIcon);
+
+
+    rightSectorContainerElement.appendChild(rightSectorUpperPartContainer);
+    rightSectorContainerElement.appendChild(rightSectorLowerPartContainer);
+
+
+    (() => {
+        overviewsContainer.addEventListener("click", (event: Event) => {
+
+            const target = event.target as HTMLElement;
+            if (target.className === "delete-tasks-overview" && target.closest(".right-sector-lower")) {
+
+                const trashbinIcons: Element[] = [...document.querySelectorAll(".delete-tasks-overview")];
+                const indexOfTrashbinIcon: number = trashbinIcons.indexOf(target);
+                if (indexOfTrashbinIcon !== -1) {
+                    trashbinIcons[indexOfTrashbinIcon].parentElement?.parentElement?.parentElement?.remove();
+                }
+            }
+        })
+    })();
+
+    return rightSectorContainerElement;
+
+}
 
 
 

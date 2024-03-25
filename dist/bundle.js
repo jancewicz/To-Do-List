@@ -197,7 +197,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     margin-bottom: 2em;
 }
 
-.input-to-insert {
+.input-to-insert-left {
     width: 60%;
     height: 100%;
     background-color: paleturquoise;
@@ -273,7 +273,7 @@ input[type="date"] {
 
 .delete-tasks-overview:hover {
     transform: scale(1.4);
-}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 0;\r\n}\r\n\r\n.full-page-container {\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.header {\r\n    width: 100%;\r\n    height: 10%;\r\n    background-color: lightseagreen;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.grid-container {\r\n    width: 100%;\r\n    height: 90%;\r\n    background-color: slateblue;\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n    grid-template-rows: 1fr 2.5fr;\r\n    height: 90%;\r\n}\r\n\r\n.categories {\r\n    list-style: none;\r\n}\r\n\r\n\r\n.grid-element-1 {\r\n    background-color: plum;\r\n    grid-column: 1;\r\n    grid-row: 1 / span 1;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.checkbox-input-category+label {\r\n    cursor: pointer;\r\n}\r\n\r\n.grid-element-1>form {\r\n    height: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.grid-element-1>form>#project-input {\r\n    width: 34em;\r\n    height: 4em;\r\n}\r\n\r\n#submit-project {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n#submit-project-button {\r\n    width: 10em;\r\n    height: 2em;\r\n}\r\n\r\n.grid-element-2 {\r\n    background-color: yellow;\r\n    grid-column: 1;\r\n    grid-row: 2;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.project-list-element {\r\n    width: 90%;\r\n    height: 15%;\r\n    background-color: aqua;\r\n    z-index: 1;\r\n    margin-top: 1em;\r\n    border: 2px black solid;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n.go-to-project {\r\n    width: 80%;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    padding-left: 1em;\r\n    cursor: pointer;\r\n}\r\n\r\n.go-to-project:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.delete-project {\r\n    width: 20%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.trashbin-icon:hover {\r\n    transform: scale(1.2);\r\n}\r\n\r\n.grid-element-3 {\r\n    background-color: crimson;\r\n    grid-column: 2;\r\n    grid-row: 1/3;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.project-overview {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    height: 20%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    scale: 1;\r\n    border: 10px solid black;\r\n    border-radius: 15px;\r\n\r\n\r\n}\r\n\r\n.project-data {\r\n    width: 70%;\r\n    height: 100%;\r\n    background-color: blueviolet;\r\n    overflow: scroll;\r\n    overflow-x: hidden;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.project-overview:hover {\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    height: 30%;\r\n    transition: scale 0.5s ease;\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.project-overview-active {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    height: 30%;\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.input-to-insert {\r\n    width: 60%;\r\n    height: 100%;\r\n    background-color: paleturquoise;\r\n}\r\n\r\n.input-to-insert-right {\r\n    width: 40%;\r\n    height: 100%;\r\n    background-color: darksalmon;\r\n}\r\n\r\n\r\ninput[type=\"date\"] {\r\n    background: transparent;\r\n    color: white;\r\n    border-radius: 4px;\r\n}\r\n\r\n.tasks {\r\n    margin-top: 1em;\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    width: 10px;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n    background: #f1f1f1;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n    background: #888;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n    background: #555;\r\n}\r\n\r\n.project-data-right-sector {\r\n    width: 30%;\r\n    height: 100%;\r\n    background-color: greenyellow;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.right-sector-upper {\r\n    height: 80em;\r\n    width: 100%;\r\n    background-color: bisque;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.priority {\r\n    width: 40%;\r\n    height: 60%;\r\n    border: 2px solid black;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.right-sector-lower {\r\n    height: 500%;\r\n    width: 100%;\r\n    background-color: cornflowerblue;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.delete-tasks-overview:hover {\r\n    transform: scale(1.4);\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,SAAS;IACT,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,WAAW;IACX,+BAA+B;IAC/B,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;IACX,2BAA2B;IAC3B,aAAa;IACb,8BAA8B;IAC9B,6BAA6B;IAC7B,WAAW;AACf;;AAEA;IACI,gBAAgB;AACpB;;;AAGA;IACI,sBAAsB;IACtB,cAAc;IACd,oBAAoB;IACpB,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,wBAAwB;IACxB,cAAc;IACd,WAAW;IACX,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,WAAW;IACX,sBAAsB;IACtB,UAAU;IACV,eAAe;IACf,uBAAuB;IACvB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,mBAAmB;IACnB,iBAAiB;IACjB,eAAe;AACnB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,yBAAyB;IACzB,cAAc;IACd,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,eAAe;IACf,UAAU;IACV,WAAW;IACX,6BAA6B;IAC7B,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,QAAQ;IACR,wBAAwB;IACxB,mBAAmB;;;AAGvB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,4BAA4B;IAC5B,gBAAgB;IAChB,kBAAkB;IAClB,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,kBAAkB;IAClB,WAAW;IACX,2BAA2B;IAC3B,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,eAAe;IACf,UAAU;IACV,6BAA6B;IAC7B,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,WAAW;IACX,UAAU;IACV,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,+BAA+B;AACnC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,4BAA4B;AAChC;;;AAGA;IACI,uBAAuB;IACvB,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,6BAA6B;IAC7B,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,wBAAwB;IACxB,aAAa;IACb,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI,UAAU;IACV,WAAW;IACX,uBAAuB;IACvB,aAAa;IACb,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,gCAAgC;IAChC,aAAa;IACb,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI,qBAAqB;AACzB","sourcesContent":["body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 0;\r\n}\r\n\r\n.full-page-container {\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.header {\r\n    width: 100%;\r\n    height: 10%;\r\n    background-color: lightseagreen;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.grid-container {\r\n    width: 100%;\r\n    height: 90%;\r\n    background-color: slateblue;\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n    grid-template-rows: 1fr 2.5fr;\r\n    height: 90%;\r\n}\r\n\r\n.categories {\r\n    list-style: none;\r\n}\r\n\r\n\r\n.grid-element-1 {\r\n    background-color: plum;\r\n    grid-column: 1;\r\n    grid-row: 1 / span 1;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.checkbox-input-category+label {\r\n    cursor: pointer;\r\n}\r\n\r\n.grid-element-1>form {\r\n    height: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.grid-element-1>form>#project-input {\r\n    width: 34em;\r\n    height: 4em;\r\n}\r\n\r\n#submit-project {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n#submit-project-button {\r\n    width: 10em;\r\n    height: 2em;\r\n}\r\n\r\n.grid-element-2 {\r\n    background-color: yellow;\r\n    grid-column: 1;\r\n    grid-row: 2;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.project-list-element {\r\n    width: 90%;\r\n    height: 15%;\r\n    background-color: aqua;\r\n    z-index: 1;\r\n    margin-top: 1em;\r\n    border: 2px black solid;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n.go-to-project {\r\n    width: 80%;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    padding-left: 1em;\r\n    cursor: pointer;\r\n}\r\n\r\n.go-to-project:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.delete-project {\r\n    width: 20%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.trashbin-icon:hover {\r\n    transform: scale(1.2);\r\n}\r\n\r\n.grid-element-3 {\r\n    background-color: crimson;\r\n    grid-column: 2;\r\n    grid-row: 1/3;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.project-overview {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    height: 20%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    scale: 1;\r\n    border: 10px solid black;\r\n    border-radius: 15px;\r\n\r\n\r\n}\r\n\r\n.project-data {\r\n    width: 70%;\r\n    height: 100%;\r\n    background-color: blueviolet;\r\n    overflow: scroll;\r\n    overflow-x: hidden;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.project-overview:hover {\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    height: 30%;\r\n    transition: scale 0.5s ease;\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.project-overview-active {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    height: 30%;\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.input-to-insert-left {\r\n    width: 60%;\r\n    height: 100%;\r\n    background-color: paleturquoise;\r\n}\r\n\r\n.input-to-insert-right {\r\n    width: 40%;\r\n    height: 100%;\r\n    background-color: darksalmon;\r\n}\r\n\r\n\r\ninput[type=\"date\"] {\r\n    background: transparent;\r\n    color: white;\r\n    border-radius: 4px;\r\n}\r\n\r\n.tasks {\r\n    margin-top: 1em;\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    width: 10px;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n    background: #f1f1f1;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n    background: #888;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n    background: #555;\r\n}\r\n\r\n.project-data-right-sector {\r\n    width: 30%;\r\n    height: 100%;\r\n    background-color: greenyellow;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.right-sector-upper {\r\n    height: 80em;\r\n    width: 100%;\r\n    background-color: bisque;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.priority {\r\n    width: 40%;\r\n    height: 60%;\r\n    border: 2px solid black;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.right-sector-lower {\r\n    height: 500%;\r\n    width: 100%;\r\n    background-color: cornflowerblue;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.delete-tasks-overview:hover {\r\n    transform: scale(1.4);\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -871,6 +871,7 @@ const renderNewProject = () => {
     console.log(newProject);
     console.log(projects);
     projectId++;
+    projectNameInput.value = "";
 };
 const removeProjectFromContainer = () => {
     const projectsContainerElement = document.querySelector(".grid-element-2");
@@ -909,9 +910,11 @@ const removeProjectFromContainer = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   renderDataInputContainerLeftSide: () => (/* binding */ renderDataInputContainerLeftSide),
+/* harmony export */   renderDataInputContainerMiddleSide: () => (/* binding */ renderDataInputContainerMiddleSide),
+/* harmony export */   renderDataInputContainerRightSide: () => (/* binding */ renderDataInputContainerRightSide),
 /* harmony export */   renderNewOverview: () => (/* binding */ renderNewOverview),
-/* harmony export */   renderNewProjectOverview: () => (/* binding */ renderNewProjectOverview),
-/* harmony export */   saveDataInOverview: () => (/* binding */ saveDataInOverview)
+/* harmony export */   renderNewProjectOverview: () => (/* binding */ renderNewProjectOverview)
 /* harmony export */ });
 const projectsContainerElement = document.querySelector(".grid-element-2");
 const overviewsContainer = document.querySelector(".grid-element-3");
@@ -933,14 +936,18 @@ const renderNewOverview = (projectNameElements, projectIndex) => {
     const projectDataContainer = document.createElement("div");
     ;
     projectDataContainer.classList.add("project-data");
-    let dataInputContainer = saveDataInOverview(projectNameElements, projectIndex);
+    const dataInputContainer = renderDataInputContainerLeftSide(projectNameElements, projectIndex);
+    const middleSideInputContainer = renderDataInputContainerMiddleSide();
+    const rightSideInputContainer = renderDataInputContainerRightSide();
     projectDataContainer.appendChild(dataInputContainer);
+    projectDataContainer.appendChild(middleSideInputContainer);
     projectOverviewContainer.appendChild(projectDataContainer);
+    projectOverviewContainer.appendChild(rightSideInputContainer);
     overviewsContainer.appendChild(projectOverviewContainer);
 };
-const saveDataInOverview = (projectNameElements, projectIndex) => {
+const renderDataInputContainerLeftSide = (projectNameElements, projectIndex) => {
     let dataInputContainer = document.createElement("div");
-    dataInputContainer.classList.add("input-to-insert");
+    dataInputContainer.classList.add("input-to-insert-left");
     const projectName = document.createElement("p");
     projectName.classList.add("project-overview-name");
     projectName.innerText = projectNameElements[projectIndex].textContent;
@@ -977,11 +984,63 @@ const saveDataInOverview = (projectNameElements, projectIndex) => {
                     const inputValue = newTaskInputElement.value;
                     newTaskListElement.innerText = inputValue;
                     taskUListElement.appendChild(newTaskListElement);
+                    newTaskInputElement.value = "";
                 }
             }
         });
     })();
     return dataInputContainer;
+};
+const renderDataInputContainerMiddleSide = () => {
+    const rightSector = document.createElement("div");
+    rightSector.classList.add("input-to-insert-right");
+    const dueToDateLabel = document.createElement("label");
+    dueToDateLabel.setAttribute("for", "date-due-to");
+    dueToDateLabel.innerText = "Project has to be done due to: ";
+    const dueToDateInput = document.createElement("input");
+    dueToDateInput.classList.add("due-to-input");
+    dueToDateInput.setAttribute("type", "date");
+    dueToDateInput.setAttribute("id", "date-due-to");
+    const chosenDateContainer = document.createElement("div");
+    chosenDateContainer.classList.add("show-date");
+    chosenDateContainer.innerText = "D A T E";
+    rightSector.appendChild(dueToDateLabel);
+    rightSector.appendChild(dueToDateInput);
+    rightSector.appendChild(chosenDateContainer);
+    // need IFFY HERE TO APPLY DATE INPUT TO IT'S DIV
+    return rightSector;
+};
+const renderDataInputContainerRightSide = () => {
+    const rightSectorContainerElement = document.createElement("div");
+    rightSectorContainerElement.classList.add("project-data-right-sector");
+    const rightSectorUpperPartContainer = document.createElement("div");
+    rightSectorUpperPartContainer.classList.add("right-sector-upper");
+    const priorityDataContainer = document.createElement("div");
+    priorityDataContainer.classList.add("priority");
+    priorityDataContainer.innerText = "1"; // hardcoded change later
+    rightSectorUpperPartContainer.appendChild(priorityDataContainer);
+    const rightSectorLowerPartContainer = document.createElement("div");
+    rightSectorLowerPartContainer.classList.add("right-sector-lower");
+    const trashBinIcon = document.createElement("img");
+    trashBinIcon.classList.add("delete-tasks-overview");
+    trashBinIcon.setAttribute("src", "images/trashbin.svg");
+    rightSectorLowerPartContainer.appendChild(trashBinIcon);
+    rightSectorContainerElement.appendChild(rightSectorUpperPartContainer);
+    rightSectorContainerElement.appendChild(rightSectorLowerPartContainer);
+    (() => {
+        overviewsContainer.addEventListener("click", (event) => {
+            var _a, _b, _c;
+            const target = event.target;
+            if (target.className === "delete-tasks-overview" && target.closest(".right-sector-lower")) {
+                const trashbinIcons = [...document.querySelectorAll(".delete-tasks-overview")];
+                const indexOfTrashbinIcon = trashbinIcons.indexOf(target);
+                if (indexOfTrashbinIcon !== -1) {
+                    (_c = (_b = (_a = trashbinIcons[indexOfTrashbinIcon].parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.parentElement) === null || _c === void 0 ? void 0 : _c.remove();
+                }
+            }
+        });
+    })();
+    return rightSectorContainerElement;
 };
 
 
