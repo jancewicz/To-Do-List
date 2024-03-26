@@ -6,7 +6,7 @@ let projects: Project[] = [];
 let projectId: number = 1;
 
 
-export const rendertrashBinIcon = () => {
+export const rendertrashBinIcon = (): HTMLImageElement => {
     const trashbinIcon: HTMLImageElement = document.createElement("img");
     trashbinIcon.setAttribute("src", "images/trashbin.svg");
     trashbinIcon.classList.add("trashbin-icon");
@@ -74,17 +74,3 @@ export const removeProjectFromContainer = () => {
 };
 
 
-
-
-// const addNewTask = () => {
-//     const addTaskButtonElement: NodeListOf<HTMLButtonElement> = document.querySelectorAll(".add-task")!;
-//     const tasksList: HTMLUListElement = document.querySelectorAll(".tasks-list");
-//     const newTaskInputElement: HTMLInputElement = document.querySelectorAll(".get-new-task");
-
-
-
-
-//     addTaskButtonElement.forEach((button) => {
-
-//     })
-// }

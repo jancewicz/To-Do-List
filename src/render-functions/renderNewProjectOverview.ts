@@ -1,9 +1,8 @@
-import { Project } from "../classes/project";
-import { selectCategory } from "..";
-import { Category } from "../classes/project";
+import { renderDropDown, dropdownFunctionality } from "./renderDropDown";
 
+export const overviewsContainer: HTMLElement = document.querySelector(".grid-element-3")!;
 const projectsContainerElement: HTMLElement = document.querySelector(".grid-element-2")!;
-const overviewsContainer: HTMLElement = document.querySelector(".grid-element-3")!;
+
 
 export const renderNewProjectOverview = () => {
 
@@ -51,7 +50,7 @@ export const renderNewOverview = (
 export const renderDataInputContainerLeftSide = (
     projectNameElements: Element[],
     projectIndex: number
-) => {
+): HTMLElement => {
 
     let dataInputContainer: HTMLElement = document.createElement("div");
     dataInputContainer.classList.add("input-to-insert-left");
@@ -117,8 +116,7 @@ export const renderDataInputContainerLeftSide = (
 }
 
 
-
-export const renderDataInputContainerMiddleSide = () => {
+export const renderDataInputContainerMiddleSide = (): HTMLElement => {
 
     const rightSector: HTMLElement = document.createElement("div");
     rightSector.classList.add("input-to-insert-right");
@@ -141,11 +139,10 @@ export const renderDataInputContainerMiddleSide = () => {
     rightSector.appendChild(chosenDateContainer);
 
 
-    // need IFFY HERE TO APPLY DATE INPUT TO IT'S DIV
     return rightSector;
 }
 
-export const renderDataInputContainerRightSide = () => {
+export const renderDataInputContainerRightSide = (): HTMLElement => {
 
     const rightSectorContainerElement: HTMLElement = document.createElement("div");
     rightSectorContainerElement.classList.add("project-data-right-sector");
@@ -157,7 +154,11 @@ export const renderDataInputContainerRightSide = () => {
     priorityDataContainer.classList.add("priority");
     priorityDataContainer.innerText = "1"; // hardcoded change later
 
+    const newDropdown = renderDropDown();
+    rightSectorUpperPartContainer.appendChild(newDropdown);
     rightSectorUpperPartContainer.appendChild(priorityDataContainer);
+
+    dropdownFunctionality();
 
 
     const rightSectorLowerPartContainer: HTMLElement = document.createElement("div");

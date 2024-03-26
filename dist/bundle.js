@@ -253,13 +253,87 @@ input[type="date"] {
     justify-content: center;
 }
 
-.priority {
-    width: 40%;
-    height: 60%;
-    border: 2px solid black;
+.priority-dropdown {
+    position: relative;
+    margin: 0.5em;
+
+}
+
+.priority-dropdown * {
+    box-sizing: border-box;
+}
+
+.dropdown-toggle-select {
+    background: #2a2f3b;
+    color: #fff;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    border: 1px solid #2a2f3b;
+    border-radius: 1em;
+    padding: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle-clicked {
+    border: 2px #26489a solid;
+    box-shadow: 0 0 0 0.1em #26489a;
+}
+
+.dropdown-toggle-select:hover {
+    background: #323741;
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+}
+
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.dropdown-options {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #323741;
+    border: 1px solid #363a43;
+    border-radius: 0.5em;
+    color: #9fa5b5;
+    position: absolute;
+    top: 2em;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+
+}
+
+.dropdown-options li {
+    padding: 0.5em 0.5em;
+    margin: 0.2em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.dropdown-options li :hover {
+    background: #2a2d35;
+}
+
+.active {
+    background: #23242a;
+}
+
+.menu-open {
+    display: block;
+    opacity: 1;
 }
 
 .right-sector-lower {
@@ -273,7 +347,7 @@ input[type="date"] {
 
 .delete-tasks-overview:hover {
     transform: scale(1.4);
-}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 0;\r\n}\r\n\r\n.full-page-container {\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.header {\r\n    width: 100%;\r\n    height: 10%;\r\n    background-color: lightseagreen;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.grid-container {\r\n    width: 100%;\r\n    height: 90%;\r\n    background-color: slateblue;\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n    grid-template-rows: 1fr 2.5fr;\r\n    height: 90%;\r\n}\r\n\r\n.categories {\r\n    list-style: none;\r\n}\r\n\r\n\r\n.grid-element-1 {\r\n    background-color: plum;\r\n    grid-column: 1;\r\n    grid-row: 1 / span 1;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.checkbox-input-category+label {\r\n    cursor: pointer;\r\n}\r\n\r\n.grid-element-1>form {\r\n    height: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.grid-element-1>form>#project-input {\r\n    width: 34em;\r\n    height: 4em;\r\n}\r\n\r\n#submit-project {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n#submit-project-button {\r\n    width: 10em;\r\n    height: 2em;\r\n}\r\n\r\n.grid-element-2 {\r\n    background-color: yellow;\r\n    grid-column: 1;\r\n    grid-row: 2;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.project-list-element {\r\n    width: 90%;\r\n    height: 15%;\r\n    background-color: aqua;\r\n    z-index: 1;\r\n    margin-top: 1em;\r\n    border: 2px black solid;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n.go-to-project {\r\n    width: 80%;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    padding-left: 1em;\r\n    cursor: pointer;\r\n}\r\n\r\n.go-to-project:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.delete-project {\r\n    width: 20%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.trashbin-icon:hover {\r\n    transform: scale(1.2);\r\n}\r\n\r\n.grid-element-3 {\r\n    background-color: crimson;\r\n    grid-column: 2;\r\n    grid-row: 1/3;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.project-overview {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    height: 20%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    scale: 1;\r\n    border: 10px solid black;\r\n    border-radius: 15px;\r\n\r\n\r\n}\r\n\r\n.project-data {\r\n    width: 70%;\r\n    height: 100%;\r\n    background-color: blueviolet;\r\n    overflow: scroll;\r\n    overflow-x: hidden;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.project-overview:hover {\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    height: 30%;\r\n    transition: scale 0.5s ease;\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.project-overview-active {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    height: 30%;\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.input-to-insert-left {\r\n    width: 60%;\r\n    height: 100%;\r\n    background-color: paleturquoise;\r\n}\r\n\r\n.input-to-insert-right {\r\n    width: 40%;\r\n    height: 100%;\r\n    background-color: darksalmon;\r\n}\r\n\r\n\r\ninput[type=\"date\"] {\r\n    background: transparent;\r\n    color: white;\r\n    border-radius: 4px;\r\n}\r\n\r\n.tasks {\r\n    margin-top: 1em;\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    width: 10px;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n    background: #f1f1f1;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n    background: #888;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n    background: #555;\r\n}\r\n\r\n.project-data-right-sector {\r\n    width: 30%;\r\n    height: 100%;\r\n    background-color: greenyellow;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.right-sector-upper {\r\n    height: 80em;\r\n    width: 100%;\r\n    background-color: bisque;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.priority {\r\n    width: 40%;\r\n    height: 60%;\r\n    border: 2px solid black;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.right-sector-lower {\r\n    height: 500%;\r\n    width: 100%;\r\n    background-color: cornflowerblue;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.delete-tasks-overview:hover {\r\n    transform: scale(1.4);\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 0;\r\n}\r\n\r\n.full-page-container {\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.header {\r\n    width: 100%;\r\n    height: 10%;\r\n    background-color: lightseagreen;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.grid-container {\r\n    width: 100%;\r\n    height: 90%;\r\n    background-color: slateblue;\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n    grid-template-rows: 1fr 2.5fr;\r\n    height: 90%;\r\n}\r\n\r\n.categories {\r\n    list-style: none;\r\n}\r\n\r\n\r\n.grid-element-1 {\r\n    background-color: plum;\r\n    grid-column: 1;\r\n    grid-row: 1 / span 1;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.checkbox-input-category+label {\r\n    cursor: pointer;\r\n}\r\n\r\n.grid-element-1>form {\r\n    height: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.grid-element-1>form>#project-input {\r\n    width: 34em;\r\n    height: 4em;\r\n}\r\n\r\n#submit-project {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n#submit-project-button {\r\n    width: 10em;\r\n    height: 2em;\r\n}\r\n\r\n.grid-element-2 {\r\n    background-color: yellow;\r\n    grid-column: 1;\r\n    grid-row: 2;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.project-list-element {\r\n    width: 90%;\r\n    height: 15%;\r\n    background-color: aqua;\r\n    z-index: 1;\r\n    margin-top: 1em;\r\n    border: 2px black solid;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n.go-to-project {\r\n    width: 80%;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    padding-left: 1em;\r\n    cursor: pointer;\r\n}\r\n\r\n.go-to-project:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.delete-project {\r\n    width: 20%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.trashbin-icon:hover {\r\n    transform: scale(1.2);\r\n}\r\n\r\n.grid-element-3 {\r\n    background-color: crimson;\r\n    grid-column: 2;\r\n    grid-row: 1/3;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.project-overview {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    height: 20%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    scale: 1;\r\n    border: 10px solid black;\r\n    border-radius: 15px;\r\n\r\n\r\n}\r\n\r\n.project-data {\r\n    width: 70%;\r\n    height: 100%;\r\n    background-color: blueviolet;\r\n    overflow: scroll;\r\n    overflow-x: hidden;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.project-overview:hover {\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    height: 30%;\r\n    transition: scale 0.5s ease;\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.project-overview-active {\r\n    position: relative;\r\n    margin-top: 1em;\r\n    width: 80%;\r\n    background-color: floralwhite;\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    height: 30%;\r\n    scale: 1.2;\r\n    translate: 0px 1em;\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.input-to-insert-left {\r\n    width: 60%;\r\n    height: 100%;\r\n    background-color: paleturquoise;\r\n}\r\n\r\n.input-to-insert-right {\r\n    width: 40%;\r\n    height: 100%;\r\n    background-color: darksalmon;\r\n}\r\n\r\n\r\ninput[type=\"date\"] {\r\n    background: transparent;\r\n    color: white;\r\n    border-radius: 4px;\r\n}\r\n\r\n.tasks {\r\n    margin-top: 1em;\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    width: 10px;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n    background: #f1f1f1;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n    background: #888;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n    background: #555;\r\n}\r\n\r\n.project-data-right-sector {\r\n    width: 30%;\r\n    height: 100%;\r\n    background-color: greenyellow;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.right-sector-upper {\r\n    height: 80em;\r\n    width: 100%;\r\n    background-color: bisque;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.priority-dropdown {\r\n    position: relative;\r\n    margin: 0.5em;\r\n\r\n}\r\n\r\n.priority-dropdown * {\r\n    box-sizing: border-box;\r\n}\r\n\r\n.dropdown-toggle-select {\r\n    background: #2a2f3b;\r\n    color: #fff;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    border: 1px solid #2a2f3b;\r\n    border-radius: 1em;\r\n    padding: 0.5em;\r\n    cursor: pointer;\r\n    transition: background-color 0.3s ease;\r\n}\r\n\r\n.dropdown-toggle-clicked {\r\n    border: 2px #26489a solid;\r\n    box-shadow: 0 0 0 0.1em #26489a;\r\n}\r\n\r\n.dropdown-toggle-select:hover {\r\n    background: #323741;\r\n}\r\n\r\n.caret {\r\n    width: 0;\r\n    height: 0;\r\n    border-left: 5px solid transparent;\r\n    border-right: 5px solid transparent;\r\n    border-top: 6px solid #fff;\r\n}\r\n\r\n.caret-rotate {\r\n    transform: rotate(180deg);\r\n}\r\n\r\n.dropdown-options {\r\n    list-style: none;\r\n    padding: 0.2em 0.5em;\r\n    background: #323741;\r\n    border: 1px solid #363a43;\r\n    border-radius: 0.5em;\r\n    color: #9fa5b5;\r\n    position: absolute;\r\n    top: 2em;\r\n    left: 50%;\r\n    width: 100%;\r\n    transform: translateX(-50%);\r\n    opacity: 0;\r\n    display: none;\r\n    transition: 0.2s;\r\n    z-index: 1;\r\n\r\n}\r\n\r\n.dropdown-options li {\r\n    padding: 0.5em 0.5em;\r\n    margin: 0.2em 0;\r\n    border-radius: 0.5em;\r\n    cursor: pointer;\r\n}\r\n\r\n.dropdown-options li :hover {\r\n    background: #2a2d35;\r\n}\r\n\r\n.active {\r\n    background: #23242a;\r\n}\r\n\r\n.menu-open {\r\n    display: block;\r\n    opacity: 1;\r\n}\r\n\r\n.right-sector-lower {\r\n    height: 500%;\r\n    width: 100%;\r\n    background-color: cornflowerblue;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.delete-tasks-overview:hover {\r\n    transform: scale(1.4);\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -813,12 +887,101 @@ document.addEventListener("click", (event) => {
         if (!activeProject.contains(event.target)) {
             activeProject.classList.remove("project-overview-active");
             activeProject.classList.add("project-overview");
-            //testDiv.style.display = "none";
         }
     });
 });
 (0,_render_functions_renderNewProject__WEBPACK_IMPORTED_MODULE_2__.removeProjectFromContainer)();
 (0,_render_functions_renderNewProjectOverview__WEBPACK_IMPORTED_MODULE_3__.renderNewProjectOverview)();
+
+
+/***/ }),
+
+/***/ "./src/render-functions/renderDropDown.ts":
+/*!************************************************!*\
+  !*** ./src/render-functions/renderDropDown.ts ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   dropdownFunctionality: () => (/* binding */ dropdownFunctionality),
+/* harmony export */   renderDropDown: () => (/* binding */ renderDropDown)
+/* harmony export */ });
+/* harmony import */ var _renderNewProjectOverview__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./renderNewProjectOverview */ "./src/render-functions/renderNewProjectOverview.ts");
+
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+const renderDropDown = () => {
+    const dropdownContainer = document.createElement("div");
+    dropdownContainer.classList.add("priority-dropdown");
+    const buttonDropdownElement = document.createElement("button");
+    buttonDropdownElement.classList.add("dropdown-toggle-select");
+    const selectedDiv = document.createElement("div");
+    selectedDiv.classList.add("selected");
+    selectedDiv.innerText = "";
+    const caret = document.createElement("div");
+    caret.classList.add("caret");
+    buttonDropdownElement.appendChild(selectedDiv);
+    buttonDropdownElement.appendChild(caret);
+    const optionsListContainer = document.createElement("ul");
+    optionsListContainer.classList.add("dropdown-options");
+    for (let i = 0; i < 3; i++) {
+        const dropdownListOption = document.createElement("li");
+        dropdownListOption.setAttribute("id", `"dropdown-option-${i + 1}"`);
+        dropdownListOption.innerText = `${i + 1}`;
+        optionsListContainer.appendChild(dropdownListOption);
+    }
+    ;
+    dropdownContainer.appendChild(buttonDropdownElement);
+    dropdownContainer.appendChild(optionsListContainer);
+    return dropdownContainer;
+};
+const dropdownFunctionality = () => {
+    _renderNewProjectOverview__WEBPACK_IMPORTED_MODULE_0__.overviewsContainer.addEventListener("click", (event) => {
+        const target = event.target;
+        if (target.closest(".priority-dropdown")) {
+            const dropdownContainer = target.closest(".priority-dropdown");
+            if (dropdownContainer) {
+                const dropdownButton = dropdownContainer.querySelector(".dropdown-toggle-select");
+                const menu = dropdownContainer.querySelector(".dropdown-options");
+                const caret = dropdownContainer.querySelector(".caret");
+                dropdownButton.classList.toggle("dropdown-toggle-clicked");
+                menu.classList.toggle("menu-open");
+                caret.classList.toggle("caret-rotate");
+            }
+        }
+        if (target.tagName === "LI" && target.closest(".dropdown-options")) {
+            const option = target;
+            const dropdownContainer = option.closest(".priority-dropdown");
+            if (dropdownContainer) {
+                const dropdownButton = dropdownContainer.querySelector(".dropdown-toggle-select");
+                const menu = dropdownContainer.querySelector(".dropdown-options");
+                const options = dropdownContainer.querySelectorAll(".dropdown-options li");
+                // need another event delegation here to input option to appropriate div
+                const priority = document.querySelector(".priority");
+                priority.innerText = option.innerText;
+                dropdownButton.classList.remove("dropdown-toggle-clicked");
+                menu.classList.remove("menu-open");
+                options.forEach((opt) => {
+                    opt.classList.remove("active");
+                });
+                option.classList.add("active");
+            }
+        }
+    });
+    document.addEventListener("click", (event) => {
+        const target = event.target;
+        const dropdownContainers = document.querySelectorAll(".priority-dropdown");
+        dropdownContainers.forEach((dropdownContainer) => {
+            const dropdownButton = dropdownContainer.querySelector(".dropdown-toggle-select");
+            const menu = dropdownContainer.querySelector(".dropdown-options");
+            if (!dropdownContainer.contains(target)) {
+                dropdownButton.classList.remove("dropdown-toggle-clicked");
+                menu.classList.remove("menu-open");
+            }
+        });
+    });
+};
 
 
 /***/ }),
@@ -891,13 +1054,6 @@ const removeProjectFromContainer = () => {
         }
     });
 };
-// const addNewTask = () => {
-//     const addTaskButtonElement: NodeListOf<HTMLButtonElement> = document.querySelectorAll(".add-task")!;
-//     const tasksList: HTMLUListElement = document.querySelectorAll(".tasks-list");
-//     const newTaskInputElement: HTMLInputElement = document.querySelectorAll(".get-new-task");
-//     addTaskButtonElement.forEach((button) => {
-//     })
-// }
 
 
 /***/ }),
@@ -910,14 +1066,17 @@ const removeProjectFromContainer = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   overviewsContainer: () => (/* binding */ overviewsContainer),
 /* harmony export */   renderDataInputContainerLeftSide: () => (/* binding */ renderDataInputContainerLeftSide),
 /* harmony export */   renderDataInputContainerMiddleSide: () => (/* binding */ renderDataInputContainerMiddleSide),
 /* harmony export */   renderDataInputContainerRightSide: () => (/* binding */ renderDataInputContainerRightSide),
 /* harmony export */   renderNewOverview: () => (/* binding */ renderNewOverview),
 /* harmony export */   renderNewProjectOverview: () => (/* binding */ renderNewProjectOverview)
 /* harmony export */ });
-const projectsContainerElement = document.querySelector(".grid-element-2");
+/* harmony import */ var _renderDropDown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./renderDropDown */ "./src/render-functions/renderDropDown.ts");
+
 const overviewsContainer = document.querySelector(".grid-element-3");
+const projectsContainerElement = document.querySelector(".grid-element-2");
 const renderNewProjectOverview = () => {
     projectsContainerElement.addEventListener("click", (event) => {
         const target = event.target;
@@ -1007,7 +1166,6 @@ const renderDataInputContainerMiddleSide = () => {
     rightSector.appendChild(dueToDateLabel);
     rightSector.appendChild(dueToDateInput);
     rightSector.appendChild(chosenDateContainer);
-    // need IFFY HERE TO APPLY DATE INPUT TO IT'S DIV
     return rightSector;
 };
 const renderDataInputContainerRightSide = () => {
@@ -1018,7 +1176,10 @@ const renderDataInputContainerRightSide = () => {
     const priorityDataContainer = document.createElement("div");
     priorityDataContainer.classList.add("priority");
     priorityDataContainer.innerText = "1"; // hardcoded change later
+    const newDropdown = (0,_renderDropDown__WEBPACK_IMPORTED_MODULE_0__.renderDropDown)();
+    rightSectorUpperPartContainer.appendChild(newDropdown);
     rightSectorUpperPartContainer.appendChild(priorityDataContainer);
+    (0,_renderDropDown__WEBPACK_IMPORTED_MODULE_0__.dropdownFunctionality)();
     const rightSectorLowerPartContainer = document.createElement("div");
     rightSectorLowerPartContainer.classList.add("right-sector-lower");
     const trashBinIcon = document.createElement("img");
