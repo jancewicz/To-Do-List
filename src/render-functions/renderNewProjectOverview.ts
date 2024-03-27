@@ -11,6 +11,7 @@ export const renderNewProjectOverview = () => {
         if (target.className === "go-to-project") {
             const projectNameElements: Element[] = [...document.querySelectorAll(".go-to-project")];
             const projectIndex: number = projectNameElements.indexOf(target);
+
             // more code after render functions is done
             console.log(`Clicking on ${projectNameElements[projectIndex].textContent}`);
             renderNewOverview(projectNameElements, projectIndex);
