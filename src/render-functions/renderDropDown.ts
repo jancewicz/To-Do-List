@@ -65,9 +65,8 @@ export const dropdownFunctionality = () => {
                 const menu = dropdownContainer.querySelector(".dropdown-options")!;
                 const options = dropdownContainer.querySelectorAll(".dropdown-options li")!;
 
-                // need another event delegation here to input option to appropriate div
-                const priority: HTMLElement = document.querySelector(".priority")!;
-                priority.innerText = option.innerText;
+                applyPriorityToProject();
+
 
                 dropdownButton.classList.remove("dropdown-toggle-clicked");
                 menu.classList.remove("menu-open");
@@ -92,4 +91,23 @@ export const dropdownFunctionality = () => {
             }
         });
     });
+}
+
+const applyPriorityToProject = (): void => {
+
+    const priorityDropdowns = document.querySelectorAll('.priority-dropdown');
+
+    overviewsContainer.addEventListener("click", (event: Event) => {
+        priorityDropdowns.forEach((dropdown: Element) => {
+
+            if (dropdown.contains(event.target as Node)) {
+
+                if ((event.target as Element).classList.contains('dropdown-options')) {
+
+                    const selectedOption: string = (event.target as Element).textContent!;
+                    (dropdown.querySelector('.selected') as Element).textContent = selectedOption;
+                }
+            }
+        });
+    })
 }

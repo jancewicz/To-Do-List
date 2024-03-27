@@ -839,6 +839,49 @@ var Category;
 
 /***/ }),
 
+/***/ "./src/functionality/convertToActive.ts":
+/*!**********************************************!*\
+  !*** ./src/functionality/convertToActive.ts ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   toggleProjectState: () => (/* binding */ toggleProjectState)
+/* harmony export */ });
+/* harmony import */ var _render_functions_renderNewProjectOverview__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../render-functions/renderNewProjectOverview */ "./src/render-functions/renderNewProjectOverview.ts");
+
+const toggleProjectState = () => {
+    _render_functions_renderNewProjectOverview__WEBPACK_IMPORTED_MODULE_0__.overviewsContainer.addEventListener("click", (event) => {
+        const target = event.target;
+        if (target.className === "project-overview") {
+            const projectsList = [...document.querySelectorAll(".project-overview")];
+            const projectIndex = projectsList.indexOf(target);
+            if (projectIndex !== -1) {
+                const overviewList = document.querySelectorAll(".project-overview");
+                overviewList.forEach((overview) => {
+                    overview.addEventListener("click", () => {
+                        overview.classList.toggle("project-overview-active");
+                    });
+                });
+                console.log(`BE`);
+            }
+        }
+    });
+};
+document.addEventListener("click", (event) => {
+    const activeProjectElements = document.querySelectorAll(".project-overview-active");
+    activeProjectElements.forEach((activeProject) => {
+        if (!activeProject.contains(event.target)) {
+            activeProject.classList.remove("project-overview-active");
+            activeProject.classList.add("project-overview");
+        }
+    });
+});
+
+
+/***/ }),
+
 /***/ "./src/index.ts":
 /*!**********************!*\
   !*** ./src/index.ts ***!
@@ -891,20 +934,6 @@ if (submitFormButton) {
     });
 }
 ;
-projectOverviewList.forEach((project) => {
-    project.addEventListener("click", () => {
-        project.classList.toggle("project-overview-active");
-    });
-});
-document.addEventListener("click", (event) => {
-    const activeProjectElements = document.querySelectorAll(".project-overview-active");
-    activeProjectElements.forEach((activeProject) => {
-        if (!activeProject.contains(event.target)) {
-            activeProject.classList.remove("project-overview-active");
-            activeProject.classList.add("project-overview");
-        }
-    });
-});
 (0,_render_functions_renderNewProject__WEBPACK_IMPORTED_MODULE_2__.removeProjectFromContainer)();
 (0,_render_functions_renderNewProjectOverview__WEBPACK_IMPORTED_MODULE_3__.renderNewProjectOverview)();
 
@@ -972,9 +1001,7 @@ const dropdownFunctionality = () => {
                 const dropdownButton = dropdownContainer.querySelector(".dropdown-toggle-select");
                 const menu = dropdownContainer.querySelector(".dropdown-options");
                 const options = dropdownContainer.querySelectorAll(".dropdown-options li");
-                // need another event delegation here to input option to appropriate div
-                const priority = document.querySelector(".priority");
-                priority.innerText = option.innerText;
+                applyPriorityToProject();
                 dropdownButton.classList.remove("dropdown-toggle-clicked");
                 menu.classList.remove("menu-open");
                 options.forEach((opt) => {
@@ -993,6 +1020,19 @@ const dropdownFunctionality = () => {
             if (!dropdownContainer.contains(target)) {
                 dropdownButton.classList.remove("dropdown-toggle-clicked");
                 menu.classList.remove("menu-open");
+            }
+        });
+    });
+};
+const applyPriorityToProject = () => {
+    const priorityDropdowns = document.querySelectorAll('.priority-dropdown');
+    _renderNewProjectOverview__WEBPACK_IMPORTED_MODULE_0__.overviewsContainer.addEventListener("click", (event) => {
+        priorityDropdowns.forEach((dropdown) => {
+            if (dropdown.contains(event.target)) {
+                if (event.target.classList.contains('dropdown-options')) {
+                    const selectedOption = event.target.textContent;
+                    dropdown.querySelector('.selected').textContent = selectedOption;
+                }
             }
         });
     });
@@ -1089,6 +1129,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   renderNewProjectOverview: () => (/* binding */ renderNewProjectOverview)
 /* harmony export */ });
 /* harmony import */ var _renderDropDown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./renderDropDown */ "./src/render-functions/renderDropDown.ts");
+/* harmony import */ var _functionality_convertToActive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functionality/convertToActive */ "./src/functionality/convertToActive.ts");
+
 
 const overviewsContainer = document.querySelector(".grid-element-3");
 const projectsContainerElement = document.querySelector(".grid-element-2");
@@ -1218,6 +1260,7 @@ const renderDataInputContainerRightSide = () => {
     })();
     return rightSectorContainerElement;
 };
+(0,_functionality_convertToActive__WEBPACK_IMPORTED_MODULE_1__.toggleProjectState)();
 
 
 /***/ })

@@ -1,4 +1,5 @@
 import { renderDropDown, dropdownFunctionality } from "./renderDropDown";
+import { toggleProjectState } from "../functionality/convertToActive";
 
 export const overviewsContainer: HTMLElement = document.querySelector(".grid-element-3")!;
 const projectsContainerElement: HTMLElement = document.querySelector(".grid-element-2")!;
@@ -15,6 +16,7 @@ export const renderNewProjectOverview = () => {
             // more code after render functions is done
             console.log(`Clicking on ${projectNameElements[projectIndex].textContent}`);
             renderNewOverview(projectNameElements, projectIndex);
+
         }
     });
 };
@@ -44,6 +46,7 @@ export const renderNewOverview = (
     projectOverviewContainer.appendChild(rightSideInputContainer);
 
     overviewsContainer.appendChild(projectOverviewContainer);
+
 
 }
 
@@ -197,5 +200,7 @@ export const renderDataInputContainerRightSide = (): HTMLElement => {
 
 
 
+
+toggleProjectState();
 
 

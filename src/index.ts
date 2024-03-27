@@ -4,6 +4,7 @@ import { renderNewProject, rendertrashBinIcon, removeProjectFromContainer } from
 import { renderNewProjectOverview } from './render-functions/renderNewProjectOverview';
 
 
+
 const submitFormButton = document.getElementById("submit-project-button") as HTMLButtonElement | null;
 const projectOverviewList: NodeListOf<HTMLElement> = document.querySelectorAll(".project-overview");
 
@@ -44,24 +45,6 @@ if (submitFormButton) {
     })
 };
 
-
-projectOverviewList.forEach((project: HTMLElement) => {
-    project.addEventListener("click", () => {
-        project.classList.toggle("project-overview-active");
-
-    });
-});
-
-
-document.addEventListener("click", (event) => {
-    const activeProjectElements: NodeListOf<HTMLElement> = document.querySelectorAll(".project-overview-active");
-    activeProjectElements.forEach((activeProject: HTMLElement) => {
-        if (!activeProject.contains(event.target as Node)) {
-            activeProject.classList.remove("project-overview-active");
-            activeProject.classList.add("project-overview");
-        }
-    });
-});
 
 removeProjectFromContainer();
 renderNewProjectOverview();
